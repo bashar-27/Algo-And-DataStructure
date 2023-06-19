@@ -2,47 +2,38 @@
 
 namespace InsertShift
 {
-   public class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            int[] arr = { 10,20,40,50 };
+            int[] arr = { 10, 20, 40, 50 };
             Console.WriteLine("Please insert new element");
             int element = Convert.ToInt32(Console.ReadLine());
+            int left = 0, right = arr.Length - 1;
+            Console.WriteLine(Binary(arr, left, right, element));
 
-            int []newArr= shiftArr(arr,element);
-            for (int i = 0; i < newArr.Length; i++)
-            {
-                Console.Write(newArr[i] + " ");
-
-            }
         }
 
-        public static int [] shiftArr(int[] arr,int element)
+        public static int Binary(int[] arr, int left, int right, int element)
         {
-            if (arr.Length == 0)
+            Array.Sort(arr);
+            while (left <= right)
             {
-                return null;
-            }
-
-            int[] shiftingArr = new int[arr.Length + 1];
-            int middleIndex = arr.Length / 2;
-            int elementArr = 0;
-            
-            for (int i =0; i < shiftingArr.Length; i++)
-            {
-                if(i == middleIndex)
+                int middle = (left + right) / 2;
+                if (arr[middle] == element)
                 {
-                    shiftingArr[i] = element;
+                    return middle;
+                }
+                if (arr[middle] > element)
+                {
+                    right = middle - 1;
                 }
                 else
                 {
-
-                shiftingArr[i] = arr[elementArr];
-                elementArr++;
+                    left = middle + 1;
                 }
             }
-            return shiftingArr;
+            return -1;
         }
     }
 }

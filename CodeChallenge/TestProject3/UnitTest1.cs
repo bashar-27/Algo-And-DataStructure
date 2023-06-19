@@ -10,20 +10,34 @@ namespace TestProject3
         {
             int ele = 30;
             int[] arr = { 1, 2, 3, 4 };
-            int[] shiftArray = { 1, 2, 30, 3, 4 };
-            int[] result = Program.shiftArr(arr, ele);
-            Assert.Equal(result, shiftArray);
+            int start = 0;
+            int len = arr.Length - 1;
+                        int result = Program.Binary(arr,start,len, ele);
+            Assert.Equal(result, -1);
 
         }
         [Fact]
         public void Test2()
         {
-            int ele = 30;
-            int[] arr = { };
-            int[] shiftArray = null;
-            int[] result = Program.shiftArr(arr, ele);
-            Assert.Equal(result, shiftArray);
+            int ele = 3;
+            int[] arr = { 1, 2, 3, 4 };
+            int start = 0;
+            int len = arr.Length - 1;
+            int result = Program.Binary(arr, start, len, ele);
+            Assert.Equal(result, 2);
 
         }
+        [Fact]
+        public void Test3()
+        {
+            int ele = -1;
+            int[] arr = { -1, -2, -3, -4 };
+            int start = 0;
+            int len = arr.Length - 1;
+            int result = Program.Binary(arr, start, len, ele);
+            Assert.Equal(result, 3);
+
+        }
+
     }
 }
