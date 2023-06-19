@@ -5,3 +5,5 @@
 [Challenge 1: Reverse Array](CodeChallenge/DSandAlgo)
 
 [Challenge 2: Insert Shift Array](CodeChallenge/InsertShift)
+
+[Challenge 3: Binary Search](CodeChallenge/BinaryTree.md)
