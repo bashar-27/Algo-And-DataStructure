@@ -1,6 +1,7 @@
 
 
 This is a simple way to make a single linked list ,the code presrent  operations for inserting nodes, searching for values to ensure its exist or not, and generating a string representation of a singly linked list.
+
 This is the whiteboard for the problem :
 [White Board](https://github.com/bashar-27/Algo-And-DataStructure/files/11857794/Untitled.3.pdf)
 
