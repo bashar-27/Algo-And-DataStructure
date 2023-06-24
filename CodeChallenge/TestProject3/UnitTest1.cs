@@ -13,13 +13,16 @@ namespace TestProject3
         [Fact]
         public void Test1()
         {
+
            LinkedList list = new LinkedList();
             Assert.Null(list.Head);
+
 
         }
         [Fact]
         public void Test2()
         {
+
             LinkedList list = new LinkedList();
             list.Insert(5);
             Assert.NotNull(list.Head);
@@ -58,6 +61,7 @@ namespace TestProject3
             Assert.True(exists);
         }
 
+
         [Fact]
         public void IncludesReturnsFalseWhenValueDoesNotExist()
         {
@@ -80,5 +84,17 @@ namespace TestProject3
             string result = list.ToString();
             Assert.Equal(expected, result);
         }
+        [Fact]
+        public void Test3()
+        {
+            int ele = -1;
+            int[] arr = { -1, -2, -3, -4 };
+            int start = 0;
+            int len = arr.Length - 1;
+            int result = Program.Binary(arr, start, len, ele);
+            Assert.Equal(result, 3);
+
+        }
+
     }
 }
