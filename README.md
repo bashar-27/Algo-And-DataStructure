@@ -7,3 +7,5 @@
 [Challenge 2: Insert Shift Array](CodeChallenge/InsertShift)
 
 [Challenge 3: Binary Search](CodeChallenge/BinaryTree.md)
+
+[Challenge 4: Linked List](CodeChallenge/InsertShift/LinkedList.md)
