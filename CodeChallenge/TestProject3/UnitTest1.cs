@@ -80,5 +80,54 @@ namespace TestProject3
             string result = list.ToString();
             Assert.Equal(expected, result);
         }
+        [Fact]
+        public void BeforeMiddle()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(10);
+            linkedList.Insert(15);
+            linkedList.InsertBefore(10, 7);
+            string expected = "{5}->{7}->{10}->{15}->NULL";
+            string result = linkedList.ToString();
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void BeforeFirst()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(10);
+            linkedList.InsertBefore(5, 2);
+            string expected = "{2}->{5}->{10}->NULL";
+            string result = linkedList.ToString();
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void AfterMiddle()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(10);
+            linkedList.Insert(15);
+            linkedList.InsertAfter(10, 12);
+            string expected = "{5}->{10}->{12}->{15}->NULL";
+            string result = linkedList.ToString();
+            Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void AfterLast()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(10);
+            linkedList.InsertAfter(10, 13);
+            string expected = "{5}->{10}->{13}->NULL";
+            string result = linkedList.ToString();
+            Assert.Equal(expected, result);
+        }
     }
 }

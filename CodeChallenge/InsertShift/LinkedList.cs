@@ -60,7 +60,54 @@ namespace InsertShift
                 current = current.Next;
               
             }
-            return str+"NULL ";
+            return str+"NULL";
+        }
+
+        public void InsertBefore(int value, int newValue)
+        {
+            CountInsert++;
+            if (Head == null)
+                return;
+
+            if (Head.Data == value)
+            {
+                Node newNode = new Node(newValue);
+                newNode.Next = Head;
+                Head = newNode;
+                return;
+            }
+
+            Node current = Head;
+            while (current.Next != null)
+            {
+                if (current.Next.Data == value)
+                {
+                    Node newNode = new Node(newValue);
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    return;
+                }
+                current = current.Next;
+            }
+        }
+
+        public void InsertAfter(int value, int newValue)
+        {
+            CountInsert++;
+            Node current = Head;
+            while (current != null)
+            {
+                if (current.Data == value)
+                {
+                    Node newNode = new Node(newValue);
+                    newNode.Next = current.Next;
+                    current.Next = newNode;
+                    if (current == Tail)
+                        Tail = newNode;
+                    return;
+                }
+                current = current.Next;
+            }
         }
 
     }
