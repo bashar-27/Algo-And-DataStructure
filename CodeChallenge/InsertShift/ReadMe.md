@@ -1,15 +1,26 @@
-<h1>Shift Array</h1>
 
-<h4>This is a simple code that will take an a array and value will insert it into the middle index of the array for example if it takes <code>[10,20,40,50]</code> 
-  and the value you want to insert is <code>[30]</code> the output should be return <code>[10,20,30,40,50]</code> .
-  Also, if you gave it an empty array it will return null .This code is wrote to achive a big o of O(n) in worst case I which the n
-  is the length of the array and the space comlexity is also the same.</h4>
+<h1>Linked List</h1>
+
+<h4>This is a simple way to make a single link list ,the code provides basic operations for inserting nodes, searching for values if included or not, and generating a string representation of a singly linked list. this is the whiteboard for the problem. :</h4>
   
-  ![Screenshot 2023-06-17 201324](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/63bb14e7-c506-4381-adc7-f27cf8bb0799)
+ ![Screenshot 2023-06-28 041507](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/b1ad2a96-edc8-43f8-b421-698845e5ada8)
+
 
 <hr>
 
-*Solution & Testing code*
+*How To Open Linked List Code*
 
-![Screenshot 2023-06-17 202422](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/538fe2e7-20d8-4ab4-82b3-3d87d0096e53)
-![Screenshot 2023-06-17 202417](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/6e1b4474-4a0b-45bc-b3ae-9ce5a997148d)
+![Screenshot 2023-06-28 042533](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/6f85247f-506a-4c45-8d9d-362a98d1b5d3)
+
+
+![Screenshot 2023-06-28 042559](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/41f5467b-d993-4fe0-8721-548bf7b2251a)
+
+![Screenshot 2023-06-28 042633](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/08275214-12b2-4a51-8232-ad4e906bd8fe)
+
+![Screenshot 2023-06-28 042652](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/a1fec5bf-3e04-4090-b0c8-c0555621dae0)
+
+*Console And Test Code*
+
+![Screenshot 2023-06-28 043006](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/d3f8d9cd-903b-40db-b188-5071ca72e979)
+
+![Screenshot 2023-06-28 043043](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/b73bc91a-f5d8-4413-91c4-113d80b9b46a)

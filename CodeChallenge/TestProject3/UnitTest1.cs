@@ -13,13 +13,16 @@ namespace TestProject3
         [Fact]
         public void Test1()
         {
+
            LinkedList list = new LinkedList();
             Assert.Null(list.Head);
+
 
         }
         [Fact]
         public void Test2()
         {
+
             LinkedList list = new LinkedList();
             list.Insert(5);
             Assert.NotNull(list.Head);
@@ -58,6 +61,7 @@ namespace TestProject3
             Assert.True(exists);
         }
 
+
         [Fact]
         public void IncludesReturnsFalseWhenValueDoesNotExist()
         {
@@ -81,6 +85,7 @@ namespace TestProject3
             Assert.Equal(expected, result);
         }
         [Fact]
+
         public void BeforeMiddle()
         {
             LinkedList linkedList = new LinkedList();
@@ -129,5 +134,6 @@ namespace TestProject3
             string result = linkedList.ToString();
             Assert.Equal(expected, result);
         }
+
     }
 }

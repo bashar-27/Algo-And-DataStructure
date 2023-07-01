@@ -2,10 +2,11 @@
 
 namespace InsertShift
 {
-   public class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+
 
             LinkedList link = new LinkedList();
             link.Insert(5);
@@ -21,6 +22,6 @@ namespace InsertShift
         }
 
 
-        
+
     }
 }
