@@ -13,8 +13,9 @@ namespace InsertShift
             link.Insert(6);
             link.Insert(7);
             link.Insert(8);
+            link.InsertAfter(8, 20);
             link.Insert(9);
-           
+            link.InsertBefore(9, 55);
             Console.WriteLine(link.Include(8));
             Console.WriteLine(link.ToString());
            
