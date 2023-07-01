@@ -24,3 +24,16 @@
 ![Screenshot 2023-06-28 043006](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/d3f8d9cd-903b-40db-b188-5071ca72e979)
 
 ![Screenshot 2023-06-28 043043](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/b73bc91a-f5d8-4413-91c4-113d80b9b46a)
+
+<hr>
+
+<h2>After added new two method insert before and after</h2>
+
+
+![Screenshot 2023-07-02 023655](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/7b885b61-19bd-442e-b5fe-b8d3264fb679)
+
+![Screenshot 2023-07-02 023743](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/ac942fde-e0d4-4ac7-a5e8-8ef8a42202b0)
+
+
+
+
