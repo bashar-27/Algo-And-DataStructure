@@ -1,5 +1,5 @@
 
-<h1>Linked List</h1>
+<h1>Linked List Update</h1>
 
 <h4>This is a simple way to make a single link list ,the code provides basic operations for inserting nodes, searching for values if included or not, and generating a string representation of a singly linked list. this is the whiteboard for the problem. :</h4>
   
