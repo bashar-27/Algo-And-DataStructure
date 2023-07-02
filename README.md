@@ -1,7 +1,9 @@
 # Algo-And-DataStructure
 <h1>**NOTE**
   
-  To Find Any Code Please Click On CodeChallenge File Then InsertShift File</h1>
+  To Find Any Code Please Click On CodeChallenge File Then InsertShift File Or
+   [Click Here](CodeChallenge/InsertShift)
+  </h1>
 <h3>Code Challenges</h3>
 <hr>
 
