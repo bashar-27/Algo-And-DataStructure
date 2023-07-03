@@ -110,5 +110,25 @@ namespace InsertShift
             }
         }
 
+        public int kthFromEnd(int k)
+        {
+            Node current = Head;
+            int position = (CountInsert - 1) - k;
+            if (CountInsert == 1) { return current.Data;}
+            if (k >= CountInsert|| k<0)
+            {
+                Console.WriteLine("ERROR! \nPlease Insert Valid Index");
+                return -1;
+            }
+         
+            for (int i = 0; i < position; i++)
+            {
+                current = current.Next;
+            }
+            
+           
+            return current.Data;
+        }
+
     }
 }

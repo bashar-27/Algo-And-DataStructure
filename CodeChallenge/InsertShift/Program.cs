@@ -18,7 +18,17 @@ namespace InsertShift
             link.InsertBefore(9, 55);
             Console.WriteLine(link.Include(8));
             Console.WriteLine(link.ToString());
-           
+            Console.WriteLine(link.CountInsert);
+            Console.WriteLine(link.kthFromEnd(-1));
+            Console.WriteLine(link.kthFromEnd(0));
+            Console.WriteLine(link.kthFromEnd(1));
+            Console.WriteLine(link.kthFromEnd(2));
+            Console.WriteLine(link.kthFromEnd(3));
+            Console.WriteLine(link.kthFromEnd(4));
+            Console.WriteLine(link.kthFromEnd(5));
+            Console.WriteLine(link.kthFromEnd(6));
+            Console.WriteLine(link.kthFromEnd(7));
+
         }
 
 
