@@ -14,7 +14,7 @@ namespace TestProject3
         public void Test1()
         {
 
-           LinkedList list = new LinkedList();
+            LinkedList list = new LinkedList();
             Assert.Null(list.Head);
 
 
@@ -80,7 +80,7 @@ namespace TestProject3
             list.Insert(5);
             list.Insert(10);
             list.Insert(15);
-            string expected = "{5}->{10}->{15}->NULL ";
+            string expected = "{5}->{10}->{15}->NULL";
             string result = list.ToString();
             Assert.Equal(expected, result);
         }
@@ -134,6 +134,66 @@ namespace TestProject3
             string result = linkedList.ToString();
             Assert.Equal(expected, result);
         }
+        [Fact]
+        public void KGreaterLength()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(10);
+            linkedList.Insert(15);
+            linkedList.Insert(20);
+            int k = 5;
+            int result = linkedList.kthFromEnd(k);
+            Assert.Equal(-1, result);
+        }
+        [Fact]
+        public void KEqualLength()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(10);
+            linkedList.Insert(15);
+            linkedList.Insert(20);
+            linkedList.Insert(25);
+            linkedList.Insert(30);
+            int k = 6;
+            int result = linkedList.kthFromEnd(k);
+            Assert.Equal(-1, result);
 
+        }
+        [Fact]
+        public void KNotPositive()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(10);
+            linkedList.Insert(15);
+            int k = -5;
+            int result = linkedList.kthFromEnd(k);
+            Assert.Equal(-1, result);
+
+        }
+        [Fact]
+        public void KEqual1()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(5);
+            int k = 1;
+            int result = linkedList.kthFromEnd(k);
+            Assert.Equal(5, result);
+
+        }
+        [Fact]
+        public void KHappy()
+        {
+            LinkedList linkedList = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(10);
+            linkedList.Insert(15);
+            int k = 2;
+            int result = linkedList.kthFromEnd(k);
+            Assert.Equal(5, result);
+
+        }
     }
 }

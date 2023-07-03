@@ -15,5 +15,7 @@ namespace InsertShift
             this.Data =d;
             Next = null;
         }
+
+       
     }
 }
