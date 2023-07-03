@@ -8,4 +8,4 @@
 
 [Challenge 3: Binary Search](CodeChallenge/BinaryTree.md)
 
-[Challenge 4 & 5: Linked List](https://github.com/bashar-27/Algo-And-DataStructure/blob/master/CodeChallenge/InsertShift/ReadMe.md)
+[Challenge 5 & 6: Linked List](https://github.com/bashar-27/Algo-And-DataStructure/blob/master/CodeChallenge/InsertShift/ReadMe.md)
