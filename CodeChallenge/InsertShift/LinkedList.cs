@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace InsertShift
 {
     public class LinkedList
     {
-        public int Count=0;
+        public int Count = 0;
         public int CountInsert = 0;
         public Node Head { get; set; }
-        public Node Tail { get; set; } 
+        public Node Tail { get; set; }
         public LinkedList()
         {
             Head = null;
@@ -31,19 +25,20 @@ namespace InsertShift
                 Head.Next = null;
 
             }
-            else { 
-            Tail.Next =node;
-            Tail = node;
+            else
+            {
+                Tail.Next = node;
+                Tail = node;
             }
 
         }
         public bool Include(int val)
         {
-            Node current = Head; 
+            Node current = Head;
             while (current != null)
             {
                 if (current.Data == val)
-                    return true; 
+                    return true;
                 current = current.Next;
             }
             return false;
@@ -52,15 +47,14 @@ namespace InsertShift
         public string ToString()
         {
             Node current = Head;
-            string str = "";
-            for (int i = 0; i<CountInsert;i++)
+            string result = "";
+            while (current != null)
             {
-
-                str += $"{{{current.Data}}}->";
+                result += $"{{{current.Data}}}->";
                 current = current.Next;
-              
             }
-            return str+"NULL";
+            result += "NULL";
+            return result;
         }
 
         public void InsertBefore(int value, int newValue)
@@ -110,5 +104,38 @@ namespace InsertShift
             }
         }
 
+    public static LinkedList zipList(LinkedList list1, LinkedList list2)
+    {
+        LinkedList list3 = new LinkedList();
+
+        Node pointer1 = list1.Head;
+        Node pointer2 = list2.Head;
+
+        while (pointer1 != null && pointer2 != null)
+        {
+            list3.Insert(pointer1.Data);
+            list3.Insert(pointer2.Data);
+
+            pointer1 = pointer1.Next;
+            pointer2 = pointer2.Next;
+        }
+
+
+        while (pointer1 != null)
+        {
+            list3.Insert(pointer1.Data);
+            pointer1 = pointer1.Next;
+        }
+
+
+        while (pointer2 != null)
+        {
+            list3.Insert(pointer2.Data);
+            pointer2 = pointer2.Next;
+        }
+        
+
+        return list3;
+    }
     }
 }
