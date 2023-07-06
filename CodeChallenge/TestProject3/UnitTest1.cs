@@ -135,6 +135,65 @@ namespace TestProject3
             Assert.Equal(expected, result);
         }
         [Fact]
+
+        public void zipTest()
+        {
+            LinkedList linkedList = new LinkedList();
+            LinkedList linkedList2 = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(15);
+            linkedList2.Insert(10);
+            linkedList2.Insert(20);
+            LinkedList linkedList3 =LinkedList.zipList(linkedList, linkedList2);
+            string expected = "{5}->{10}->{15}->{20}->NULL";
+              Assert.Equal(expected, linkedList3.ToString());
+        }
+        [Fact]
+        public void zipTest2()
+        {
+            LinkedList linkedList = new LinkedList();
+            LinkedList linkedList2 = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(15);
+            linkedList.Insert(25);
+            linkedList2.Insert(10);
+            linkedList2.Insert(20);
+            LinkedList linkedList3 = LinkedList.zipList(linkedList, linkedList2);
+            string expected = "{5}->{10}->{15}->{20}->{25}->NULL";
+            Assert.Equal(expected, linkedList3.ToString());
+        }
+        [Fact]
+        public void zipTest3()
+        {
+            LinkedList linkedList = new LinkedList();
+            LinkedList linkedList2 = new LinkedList();
+            linkedList.Insert(5);
+            linkedList.Insert(15);
+            linkedList.Insert(25);
+            linkedList2.Insert(10);
+            linkedList2.Insert(20);
+            linkedList2.Insert(30);
+            linkedList2.Insert(35);
+            linkedList2.Insert(40);
+            LinkedList linkedList3 = LinkedList.zipList(linkedList, linkedList2);
+            string expected = "{5}->{10}->{15}->{20}->{25}->{30}->{35}->{40}->NULL";
+            Assert.Equal(expected, linkedList3.ToString());
+        }
+        [Fact]
+        public void zipTest4()
+        {
+            LinkedList linkedList = new LinkedList();
+            LinkedList linkedList2 = new LinkedList();
+            linkedList2.Insert(10);
+            linkedList2.Insert(20);
+            linkedList2.Insert(30);
+            linkedList2.Insert(35);
+            linkedList2.Insert(40);
+            LinkedList linkedList3 = LinkedList.zipList(linkedList, linkedList2);
+            string expected = "{10}->{20}->{30}->{35}->{40}->NULL";
+            Assert.Equal(expected, linkedList3.ToString());
+        }
+
         public void KGreaterLength()
         {
             LinkedList linkedList = new LinkedList();
@@ -159,6 +218,7 @@ namespace TestProject3
             int k = 6;
             int result = linkedList.kthFromEnd(k);
             Assert.Equal(-1, result);
+
 
         }
         [Fact]
