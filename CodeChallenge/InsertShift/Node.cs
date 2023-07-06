@@ -15,5 +15,7 @@ namespace InsertShift
           Data =d;
             Next = null;
         }
+
+       
     }
 }

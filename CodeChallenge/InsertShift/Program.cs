@@ -25,10 +25,15 @@ namespace InsertShift
             link2.Insert(600);
 
             Console.WriteLine(link.ToString());
+
             Console.WriteLine(link2.ToString());
             LinkedList list3 = new LinkedList();
             list3= LinkedList.zipList(link, link2);
             Console.WriteLine(list3.ToString());
+
+
+        }
+
 
 
         }
