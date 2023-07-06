@@ -2,6 +2,8 @@
 
 <p>This is a simple code that takes two linked list and will merge it and return new linked list.
   The addition will be mutual so that it takes the first value from the first Linkedlist and the second value from the second Linkedlist etc... .</p>
+  
+  Pull Request: [URL](https://github.com/bashar-27/Algo-And-DataStructure/pull/8/)
 
   <hr>
   <h2>White Board</h2>
