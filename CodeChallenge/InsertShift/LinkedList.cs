@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 
 namespace InsertShift
 {
-    public class LinkedList
+    public  class LinkedList
     {
         public int Count = 0;
-        public int CountInsert = 0;
+        public static int CountInsert = 0;
         public Node Head { get; set; }
         public Node Tail { get; set; }
         public LinkedList()
@@ -159,7 +160,27 @@ namespace InsertShift
         return list3;
     }
 
+        public static LinkedList ReverseLink(LinkedList list)
+        {
+            LinkedList newList = new LinkedList();
+            Node current = list.Head;
+            Node prev = null;
+         
+            
+            while (current != null)
+            {
+                Node node = new Node(current.Data);
+                Node next = current.Next;
+                node.Next = prev;
+                prev = node;
+                current = current.Next;
+            }
 
+            newList.Head = prev;
+            return list;
+        }
+
+       
 
     }
 }

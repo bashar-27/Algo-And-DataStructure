@@ -24,12 +24,17 @@ namespace InsertShift
             link2.Insert(500);
             link2.Insert(600);
 
-            Console.WriteLine(link.ToString());
+            //Console.WriteLine(link.ToString());
 
             Console.WriteLine(link2.ToString());
-            LinkedList list3 = new LinkedList();
-            list3= LinkedList.zipList(link, link2);
-            Console.WriteLine(list3.ToString());
+            //LinkedList list3 = new LinkedList();
+            //list3= LinkedList.zipList(link, link2);
+            //Console.WriteLine(list3.ToString());
+
+            LinkedList list4 = new LinkedList();
+            list4 = LinkedList.ReverseLink(link2);
+            Console.WriteLine(list4.ToString());
+            Console.WriteLine("---------------------------------------------");
 
 
         }
@@ -40,5 +45,4 @@ namespace InsertShift
        
     
 
-}
 }
