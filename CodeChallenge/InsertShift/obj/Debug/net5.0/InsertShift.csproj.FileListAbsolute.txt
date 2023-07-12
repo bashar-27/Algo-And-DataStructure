@@ -1,0 +1,16 @@
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\bin\Debug\net5.0\InsertShift.exe
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\bin\Debug\net5.0\InsertShift.deps.json
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\bin\Debug\net5.0\InsertShift.runtimeconfig.json
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\bin\Debug\net5.0\InsertShift.runtimeconfig.dev.json
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\bin\Debug\net5.0\InsertShift.dll
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\bin\Debug\net5.0\InsertShift.pdb
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\InsertShift.csproj.AssemblyReference.cache
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\InsertShift.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\InsertShift.AssemblyInfoInputs.cache
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\InsertShift.AssemblyInfo.cs
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\InsertShift.csproj.CoreCompileInputs.cache
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\InsertShift.dll
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\refint\InsertShift.dll
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\InsertShift.pdb
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\InsertShift.genruntimeconfig.cache
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\InsertShift\obj\Debug\net5.0\ref\InsertShift.dll
