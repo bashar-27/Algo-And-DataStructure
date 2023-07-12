@@ -255,5 +255,143 @@ namespace TestProject3
             Assert.Equal(5, result);
 
         }
+        [Fact]
+        public void CanEnqueueAndDequeue()
+        {
+            // Arrange
+            Queue queue = new Queue();
+
+            // Act
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+            int result1 = queue.Dequeue();
+            int result2 = queue.Dequeue();
+
+            // Assert
+            Assert.Equal(10, result1);
+            Assert.Equal(20, result2);
+            Assert.True(queue.IsEmpty());
+        }
+
+        [Fact]
+        public void CanPeek()
+        {
+            // Arrange
+            Queue queue = new Queue();
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+
+            // Act
+            int result = queue.peek();
+
+            // Assert
+            Assert.Equal(10, result);
+            Assert.False(queue.IsEmpty());
+
+       
+        }
+
+        [Fact]
+        public void CanEnqueue()
+        {
+            // Arrange
+            Queue queue = new Queue();
+
+            // Act
+            queue.Enqueue(10);
+
+            // Assert
+            Assert.False(queue.IsEmpty());
+        }
+
+        [Fact]
+        public void CanEnqueueMultipleValues()
+        {
+            // Arrange
+            Queue queue = new Queue();
+
+            // Act
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+
+            // Assert
+            Assert.False(queue.IsEmpty());
+        }
+
+        [Fact]
+        public void CanDequeue()
+        {
+            // Arrange
+            Queue queue = new Queue();
+            queue.Enqueue(10);
+
+            // Act
+            int result = queue.Dequeue();
+
+            // Assert
+            Assert.Equal(10, result);
+            Assert.True(queue.IsEmpty());
+        }
+
+        [Fact]
+        public void CanPeekStack()
+        {
+            // Arrange
+            Queue queue = new Queue();
+            queue.Enqueue(10);
+
+            // Act
+            int result = queue.peek();
+
+            // Assert
+            Assert.Equal(10, result);
+            Assert.False(queue.IsEmpty());
+        }
+
+        [Fact]
+        public void CanEmptyQueue()
+        {
+            // Arrange
+            Queue queue = new Queue();
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+
+            // Act
+            queue.Dequeue();
+            queue.Dequeue();
+
+            // Assert
+            Assert.True(queue.IsEmpty());
+        }
+
+        [Fact]
+        public void CanInstantiateEmptyQueue()
+        {
+            // Arrange & Act
+            Queue queue = new Queue();
+
+            // Assert
+            Assert.True(queue.IsEmpty());
+        }
+
+        [Fact]
+        public void DequeueOnEmptyQueueRaisesException()
+        {
+            // Arrange
+            Queue queue = new Queue();
+
+            // Act & Assert
+            Assert.Throws<InvalidOperationException>(() => queue.Dequeue());
+        }
+
+        [Fact]
+        public void PeekOnEmptyQueueRaisesException()
+        {
+            // Arrange
+            Queue queue = new Queue();
+
+            // Act & Assert
+            Assert.Throws<InvalidOperationException>(() => queue.peek());
+        }
     }
 }

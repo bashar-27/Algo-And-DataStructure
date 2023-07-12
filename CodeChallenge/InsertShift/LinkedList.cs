@@ -177,7 +177,7 @@ namespace InsertShift
             }
 
             newList.Head = prev;
-            return list;
+            return newList;
         }
 
        
