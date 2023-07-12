@@ -12,4 +12,5 @@
 | Challenge 5 & 6:        | [Linked List  ](https://github.com/bashar-27/Algo-And-DataStructure/tree/master/CodeChallenge/InsertShift)            |
 | Challenge 7:            | [Linked List Kth ](https://github.com/bashar-27/Algo-And-DataStructure/blob/master/CodeChallenge/linked-list-kth.md)            |
 | Challenge 8:            | [Linked List zip](CodeChallenge/Linked-List-zip.md)                                                                                  |
+| Challenge 10:           | [Stack And Queu](CodeChallenge/StackAndQueue.md)                                                                    |
 
