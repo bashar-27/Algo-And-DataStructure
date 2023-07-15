@@ -24,6 +24,7 @@ namespace InsertShift
 
             // Dequeue and print the remaining value
             Console.WriteLine(pseudoQueue.Dequeue());
+            Console.WriteLine(pseudoQueue.Dequeue());
 
             //Stack stack = new Stack();
             //Queue queue = new Queue();

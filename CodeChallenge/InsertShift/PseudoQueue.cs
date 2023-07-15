@@ -39,5 +39,5 @@ namespace InsertShift
             return outputStack.Pop();
         }
     }
-
+    
 }
