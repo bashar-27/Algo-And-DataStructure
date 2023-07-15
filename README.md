@@ -13,4 +13,4 @@
 | Challenge 7:            | [Linked List Kth ](https://github.com/bashar-27/Algo-And-DataStructure/blob/master/CodeChallenge/linked-list-kth.md)            |
 | Challenge 8:            | [Linked List zip](CodeChallenge/Linked-List-zip.md)                                                                                  |
 | Challenge 10:           | [Stack And Queu](CodeChallenge/StackAndQueue.md)                                                                    |
-
+| Challenge 11:           | [Stack And Queue Pseudo](CodeChallenge/Challange11.md)                                                               |
