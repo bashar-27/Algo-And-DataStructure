@@ -11,6 +11,10 @@ namespace InsertShift
         Node front;
         Node back;
         int count;
+
+        public Stack stack1 { get; internal set; }
+        public Stack<int> stack2 { get; internal set; }
+
         public Queue()
         {
             front = back = null;

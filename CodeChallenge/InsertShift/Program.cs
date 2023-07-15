@@ -7,26 +7,44 @@ namespace InsertShift
     {
         static void Main(string[] args)
         {
-            Stack stack = new Stack();
-            Queue queue = new Queue();
-            Console.WriteLine("-----------------STACK-------------------");
-            stack.push(50);
-            stack.push(40);
-            stack.push(30);
-            stack.print();
-            stack.peek();
-            stack.pop();
-            stack.print();
-            stack.peek();
-            Console.WriteLine("-----------------QUEUE-------------------");
 
-            queue.Enqueue(100);
-            queue.Enqueue(200);
-            queue.Enqueue(300);
-            queue.print();
-            Console.WriteLine($"De-Queue :{queue.Dequeue()}");
-            Console.WriteLine($"Peek Element:{queue.peek()}");
-            queue.print();
+            PseudoQueue pseudoQueue = new PseudoQueue();
+
+            // Enqueue some values
+            pseudoQueue.Enqueue(10);
+            pseudoQueue.Enqueue(20);
+            pseudoQueue.Enqueue(30);
+
+            // Dequeue and print the values
+            Console.WriteLine(pseudoQueue.Dequeue()); // Output: 10
+            Console.WriteLine(pseudoQueue.Dequeue()); // Output: 20
+
+            // Enqueue another value
+            pseudoQueue.Enqueue(40);
+
+            // Dequeue and print the remaining value
+            Console.WriteLine(pseudoQueue.Dequeue());
+
+            //Stack stack = new Stack();
+            //Queue queue = new Queue();
+            //Console.WriteLine("-----------------STACK-------------------");
+            //stack.push(50);
+            //stack.push(40);
+            //stack.push(30);
+            //stack.print();
+            //stack.peek();
+            //stack.pop();
+            //stack.print();
+            //stack.peek();
+            //Console.WriteLine("-----------------QUEUE-------------------");
+
+            //queue.Enqueue(100);
+            //queue.Enqueue(200);
+            //queue.Enqueue(300);
+            //queue.print();
+            //Console.WriteLine($"De-Queue :{queue.Dequeue()}");
+            //Console.WriteLine($"Peek Element:{queue.peek()}");
+            //queue.print();
 
             //LinkedList link = new LinkedList();
             //LinkedList link2 = new LinkedList();
