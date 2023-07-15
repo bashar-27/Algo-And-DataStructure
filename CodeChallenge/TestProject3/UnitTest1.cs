@@ -393,5 +393,53 @@ namespace TestProject3
             // Act & Assert
             Assert.Throws<InvalidOperationException>(() => queue.peek());
         }
+
+
+        [Fact]
+        public void EnqDeq_HappyPath()
+        {
+            
+            PseudoQueue q = new PseudoQueue();
+
+           
+            q.Enqueue(10);
+            q.Enqueue(20);
+            q.Enqueue(30);
+            int res1 = q.Dequeue();
+            int res2 = q.Dequeue();
+            q.Enqueue(40);
+            int res3 = q.Dequeue();
+
+            Assert.Equal(10, res1);
+            Assert.Equal(20, res2);
+            Assert.Equal(30, res3);
+        }
+
+        [Fact]
+        public void Deq_ExpectedFailure()
+        {
+            
+            PseudoQueue q = new PseudoQueue();
+
+          
+            Assert.Throws<InvalidOperationException>(() => q.Dequeue());
+        }
+
+        [Fact]
+        public void EnqDeq_ExpectedBehavior()
+        {
+         
+            PseudoQueue q = new PseudoQueue();
+
+         
+            q.Enqueue(10);
+            int res1 = q.Dequeue();
+            q.Enqueue(20);
+            int res2 = q.Dequeue();
+
+          
+            Assert.Equal(10, res1);
+            Assert.Equal(20, res2);
+        }
     }
 }

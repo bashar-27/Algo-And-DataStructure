@@ -65,5 +65,10 @@ namespace InsertShift
             }
             Console.WriteLine("]");
         }
+
+        public static implicit operator Stack(Stack<int> v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
