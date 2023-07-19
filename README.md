@@ -14,4 +14,4 @@
 | Challenge 8:            | [Linked List zip](CodeChallenge/Linked-List-zip.md)                                                                                  |
 | Challenge 10:           | [Stack And Queu](CodeChallenge/StackAndQueue.md)                                                                     |
 | Challenge 11:           | [Stack And Queue Pseudo](CodeChallenge/Challange11.md)                                                               |
-| Challenge 12:           | [stack-queue-animal-shelter]()                                                                                       |
+| Challenge 12:           | [stack-queue-animal-shelter](CodeChallenge/shelter.md)                                                                                       |
