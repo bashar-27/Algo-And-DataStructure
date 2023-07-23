@@ -12,8 +12,10 @@ namespace InsertShift
         public Node Next { get; set; }
         
         public Node(int d) {
-            this.Data =d;
+          Data =d;
             Next = null;
         }
+
+       
     }
 }
