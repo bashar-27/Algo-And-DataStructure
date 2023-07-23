@@ -15,3 +15,4 @@
 | Challenge 10:           | [Stack And Queu](CodeChallenge/StackAndQueue.md)                                                                     |
 | Challenge 11:           | [Stack And Queue Pseudo](CodeChallenge/Challange11.md)                                                               |
 | Challenge 12:           | [stack-queue-animal-shelter](CodeChallenge/shelter.md)                                                                                       |
+| Challenge 13:           | [Validate Brackets](CodeChallenge/challenge13.md)                                                                    |
