@@ -13,36 +13,37 @@ namespace InsertShift
         {
             char[] chars = bracket.ToCharArray();
             Stack s1 = new Stack();
+            Stack<char> myStack = new Stack<char>();
 
             foreach (char c in chars)
             {
                 if (c == '(' || c == '[' || c == '{')
                 {
                     // Push the element in the stack
-                    s1.Push(c);
+                    myStack.Push(c);
                     continue;
                 }
 
-                            if (s1.Count == 0)
+                          if(myStack.Count==null)
                     return false;
 
                 char check;
                 switch (c)
                 {
                     case ')':
-                        check = (char)s1.Pop();
+                        check = myStack.Pop();
                         if (check == '{' || check == '[')
                             return false;
                         break;
 
                     case '}':
-                        check = (char)s1.Pop();
+                        check = (char)myStack.Pop();
                         if (check == '(' || check == '[')
                             return false;
                         break;
 
                     case ']':
-                        check = (char)s1.Pop();
+                        check = (char)myStack.Pop();
                         if (check == '(' || check == '{')
                             return false;
                         break;
@@ -50,7 +51,7 @@ namespace InsertShift
             }
 
            
-            return s1.Count == 0;
+            return myStack.Count == 0;
         }
     }
             
