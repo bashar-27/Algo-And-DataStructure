@@ -24,7 +24,7 @@ namespace InsertShift
                     continue;
                 }
 
-                          if(myStack.Count==null)
+                    if(myStack.Count==null)
                     return false;
 
                 char check;
@@ -49,12 +49,12 @@ namespace InsertShift
                         break;
                 }
             }
-
-           
+            
             return myStack.Count == 0;
         }
+   
     }
             
-      } 
+ } 
    
         
