@@ -51,7 +51,10 @@ namespace InsertShift
 
 
                 }
-            Console.WriteLine("");
+            Console.WriteLine("\n\n\n");
+
+            Console.WriteLine("Maximum element in tree is " + testTree.Max_tree());
+
         }
 
 
