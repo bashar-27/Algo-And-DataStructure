@@ -17,4 +17,4 @@
 | Challenge 12:           | [stack-queue-animal-shelter](CodeChallenge/shelter.md)                                                               |
 | Challenge 13:           | [Validate Brackets](CodeChallenge/challenge13.md)                                                                    |
 | Challenge 15:           | [Trees](CodeChallenge/Tree.md)                                                                                       |
-| Challenge 16:           | [Find Max in Tree]()                                                                                                 |
+| Challenge 16:           | [Find Max in Tree](CodeChallenge/maxValueTree.md)                                                                    |
