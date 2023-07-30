@@ -89,6 +89,34 @@ namespace InsertShift
 
             return results;
         }
+        public int Max_tree()
+        {
+            return Max_tree(root);
+        }
+        private int Max_tree(Node root)
+        {
+            if (root == null) {
+                return 0;
+            }
+            else
+            {
+                int max = root.Data;
+                int lMax = Max_tree(root.left);
+                int rMax = Max_tree(root.right);
+                if (max <lMax )
+                {
+                    max = lMax;
+                }
+                if (max < rMax)
+                {
+                    max = rMax;
+                    
+                }
+                return max;
+
+            }
+
+        }
 
     }
 

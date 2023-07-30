@@ -198,5 +198,60 @@ public class BinarySearchTreeTests
             BinarySearchTree testTree = new BinarySearchTree();
             Assert.False(testTree.Contains(5));
         }
+        private BinarySearchTree CreateBinarySearchTree()
+        {
+            BinarySearchTree testTree = new BinarySearchTree();
+            testTree.Add(100);
+            testTree.Add(50);
+            testTree.Add(200);
+            testTree.Add(25);
+            testTree.Add(75);
+            testTree.Add(150);
+            testTree.Add(300);
+            testTree.Add(60);
+            testTree.Add(90);
+            testTree.Add(342);
+            return testTree;
+        }
+
+        [Fact]
+        public void HappyPath()
+        {
+            // Arrange
+            BinarySearchTree testTree = CreateBinarySearchTree();
+
+            // Act
+            int result = testTree.Max_tree();
+
+            // Assert
+            Assert.Equal(342, result);
+        }
+
+        [Fact]
+        public void Max_tree_TreeIsEmpty()
+        {
+            // Arrange
+            BinarySearchTree testTree = new BinarySearchTree();
+
+            // Act
+            int result = testTree.Max_tree();
+
+            // Assert
+            Assert.Equal(0, result);
+        }
+
+        [Fact]
+        public void Max_tree_WhenSingleNodeTree()
+        {
+            // Arrange
+            BinarySearchTree testTree = new BinarySearchTree();
+            testTree.Add(42);
+
+            // Act
+            int result = testTree.Max_tree();
+
+            // Assert
+            Assert.Equal(42, result);
+        }
     }
 }
