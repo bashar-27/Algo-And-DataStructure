@@ -253,5 +253,27 @@ public class BinarySearchTreeTests
             // Assert
             Assert.Equal(42, result);
         }
+            [Fact]
+            public void BFStest()
+            {
+
+
+            BinarySearchTree binaryTree = new BinarySearchTree();
+                binaryTree.AddBFS(2);
+                binaryTree.AddBFS(7);
+                binaryTree.AddBFS(5);
+                binaryTree.AddBFS(2);
+                binaryTree.AddBFS(6);
+                binaryTree.AddBFS(9);
+                binaryTree.AddBFS(5);
+                binaryTree.AddBFS(11);
+                binaryTree.AddBFS(4);
+
+                List<int> result = binaryTree.BFS(binaryTree.root);
+
+
+                List<int> expected = new List<int> { 2, 7, 5, 2, 6, 9, 5, 11, 4 };
+                Assert.Equal(expected, result);
+            }
+        }
     }
-}
