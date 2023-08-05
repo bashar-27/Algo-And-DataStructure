@@ -25,7 +25,7 @@ namespace InsertShift
 
     public class bTree : tree
     {
-        public IList<int> PreOrder(Node root)
+        public List<int> PreOrder(Node root)
         {
             List<int> results = new List<int>();
             if (root == null) return results;
@@ -48,7 +48,7 @@ namespace InsertShift
        
         /// <param name="root">Root Node of Binary Tree</param>
         /// <returns>IList of tree values</returns>
-        public IList<int> InOrder(Node root)
+        public List<int> InOrder(Node root)
         {
             List<int> results = new List<int>();
             if (root == null) return results;
@@ -71,7 +71,7 @@ namespace InsertShift
    
         /// <param name="root">Rood Node of Binary Tree</param>
         /// <returns>IList of tree values</returns>
-        public IList<int> PostOrder(Node root)
+        public List<int> PostOrder(Node root)
         {
             List<int> results = new List<int>();
             if (root == null) return results;
@@ -88,6 +88,31 @@ namespace InsertShift
             results.Add(root.Data);
 
             return results;
+        }
+       
+        public List<int>BFS(Node root)
+        {
+            Queue<Node> queue = new Queue<Node>();
+            List <int> results = new List<int>();
+
+            if(root == null) return results;
+
+            queue.Enqueue(root);
+            while(queue.Count != 0)
+            {
+                Node newNode = queue.Dequeue();
+                results.Add(newNode.Data);
+                if(newNode.left != null)
+                {
+                    queue.Enqueue(newNode.left);
+                }
+                if(newNode.right != null)
+                {
+                    queue.Enqueue(newNode.right);
+                }
+            }
+            return results;
+
         }
         public int Max_tree()
         {

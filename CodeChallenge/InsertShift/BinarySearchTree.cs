@@ -72,5 +72,36 @@ namespace InsertShift
             }
             return false;
         }
+
+        public void AddBFS(int value)
+        {
+            root = AddRecursive(root, value);
+        }
+
+        private Node AddRecursive(Node current, int value)
+        {
+            if (current == null)
+            {
+                return new Node(value);
+            }
+
+
+            if (current.left == null)
+            {
+                current.left = new Node(value);
+            }
+
+            else if (current.right == null)
+            {
+                current.right = new Node(value);
+            }
+
+            else
+            {
+                current.left = AddRecursive(current.left, value);
+            }
+
+            return current;
+        }
     }
 }
