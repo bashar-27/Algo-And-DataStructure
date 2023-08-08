@@ -19,3 +19,4 @@
 | Challenge 15:           | [Trees](CodeChallenge/Tree.md)                                                                                       |
 | Challenge 16:           | [Find Max in Tree](CodeChallenge/maxValueTree.md)                                                                    |
 | Challenge 17:           | [BFS](CodeChallenge/BFS.md)                                                                                          |
+| Challenge 18:           |[FizzBuzz Tree]()                                                                                    |
