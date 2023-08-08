@@ -275,5 +275,26 @@ public class BinarySearchTreeTests
                 List<int> expected = new List<int> { 2, 7, 5, 2, 6, 9, 5, 11, 4 };
                 Assert.Equal(expected, result);
             }
+        [Fact]
+        public void FizzBuzzTest()
+        {
+
+
+            BinarySearchTree binaryTree = new BinarySearchTree();
+          
+            binaryTree.AddBFS(5);
+            binaryTree.AddBFS(11);
+            binaryTree.AddBFS(9);
+            binaryTree.AddBFS(7);
+            binaryTree.AddBFS(30);
+            binaryTree.AddBFS(4);
+            binaryTree.AddBFS(88);
+
+            List<string> result =Program.FizzBuzzTree(binaryTree);
+
+
+            List<string> expected = new List<string> { "Buzz","11","7","4","88","FizzBuzz","Fizz" };
+            Assert.Equal(expected, result);
         }
+    }
     }

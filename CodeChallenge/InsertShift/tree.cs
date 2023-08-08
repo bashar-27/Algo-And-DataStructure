@@ -143,6 +143,109 @@ namespace InsertShift
 
         }
 
+        //    public List<object> FizzBuzzTree(Node node)
+        //    {
+        //        List<object> list = new List<object>();
+        //        if(node == null)
+        //        {
+        //            return list;
+        //        }
+        //        Queue<Node>fizzBuzzQueue = new Queue<Node>();
+        //        fizzBuzzQueue.Enqueue(node);
+        //        while(fizzBuzzQueue.Count > 0)
+        //        {
+        //            for (int i = 0; i < fizzBuzzQueue.Count; i++)
+        //            {
+        //                if (fizzBuzzQueue.First().Data % 5 == 0 && fizzBuzzQueue.First().Data % 3 == 0)
+        //                {
+        //                    list.Add("FizzBuzz");
+        //                        }
+        //                else if(fizzBuzzQueue.First().Data % 5 == 0)
+        //                {
+        //                    list.Add("Buzz");
+        //                }
+        //                else if(fizzBuzzQueue.First().Data %3== 0)
+        //                {
+        //                    list.Add("Fizz");
+        //                }
+        //                else
+        //                {
+        //                    list.Add(fizzBuzzQueue.First().Data);
+        //                }
+        //                Node node2 =fizzBuzzQueue.Dequeue();
+        //                foreach (var item in node2.child)
+        //                {
+        //                    fizzBuzzQueue.Enqueue(item);
+        //                }
+
+
+        //            }
+        //        }
+        //        return list;
+        //    }
+        public BinarySearchTree FizzBuzzTree(BinarySearchTree tree)
+        {
+          //  List<Node> results = new List<Node>();
+            PreOrder(tree.root);
+            return tree;
+        }
+
+        /// <summary>
+        /// Method validates the node value and replace with Fizz, Buzz, or FizzBuzz
+        /// </summary>
+        /// <param name="node"> Validating Node </param>
+        /// <returns> Node with validated value </returns>
+        public static Node CheckForNode(Node node)
+        {
+            List<Node>result = new List<Node>();
+            if (node.Data % 15 == 0)
+            {
+                Node n1 = new Node();
+                n1.NewValue = "FizzBuzz";
+                n1.left = node.left;
+                n1.right = node.right;
+                result.Add(n1);
+                return n1;
+            }
+            else if (node.Data % 5 == 0)
+            {
+                Node n1 = new Node();
+                n1.NewValue = "Fizz";
+                n1.left = node.left;
+                n1.right = node.right;
+                result.Add(n1);
+                return n1;
+            }
+            else if (node.Data % 3 == 0)
+            {
+                Node n1 = new Node();
+                n1.NewValue = "Buzz";
+                n1.left = node.left;
+                n1.right = node.right;
+                result.Add(n1);
+                return n1;
+            }
+
+            return node;
+        }
+
+        /// <summary>
+        /// Method to check for every Nodes in a binary tree
+        /// </summary>
+        /// <param name="root">Root node checking for leftchild and rightchild</param>
+        public void PreOrderr(Node root)
+        {
+            CheckForNode(root);
+            if (root.left != null)
+            {
+                PreOrder(root.left);
+            }
+            if (root.right != null)
+            {
+                PreOrder(root.right);
+            }
+        }
+
     }
 
   }
