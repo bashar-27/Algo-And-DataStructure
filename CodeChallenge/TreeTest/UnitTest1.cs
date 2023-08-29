@@ -253,35 +253,35 @@ public class BinarySearchTreeTests
             // Assert
             Assert.Equal(42, result);
         }
-            [Fact]
-            public void BFStest()
-            {
+        [Fact]
+        public void BFStest()
+        {
 
 
             BinarySearchTree binaryTree = new BinarySearchTree();
-                binaryTree.AddBFS(2);
-                binaryTree.AddBFS(7);
-                binaryTree.AddBFS(5);
-                binaryTree.AddBFS(2);
-                binaryTree.AddBFS(6);
-                binaryTree.AddBFS(9);
-                binaryTree.AddBFS(5);
-                binaryTree.AddBFS(11);
-                binaryTree.AddBFS(4);
+            binaryTree.AddBFS(2);
+            binaryTree.AddBFS(7);
+            binaryTree.AddBFS(5);
+            binaryTree.AddBFS(2);
+            binaryTree.AddBFS(6);
+            binaryTree.AddBFS(9);
+            binaryTree.AddBFS(5);
+            binaryTree.AddBFS(11);
+            binaryTree.AddBFS(4);
 
-                List<int> result = binaryTree.BFS(binaryTree.root);
+            List<int> result = binaryTree.BFS(binaryTree.root);
 
 
-                List<int> expected = new List<int> { 2, 7, 5, 2, 6, 9, 5, 11, 4 };
-                Assert.Equal(expected, result);
-            }
+            List<int> expected = new List<int> { 2, 7, 5, 2, 6, 9, 5, 11, 4 };
+            Assert.Equal(expected, result);
+        }
         [Fact]
         public void FizzBuzzTest()
         {
 
 
             BinarySearchTree binaryTree = new BinarySearchTree();
-          
+
             binaryTree.AddBFS(5);
             binaryTree.AddBFS(11);
             binaryTree.AddBFS(9);
@@ -290,11 +290,30 @@ public class BinarySearchTreeTests
             binaryTree.AddBFS(4);
             binaryTree.AddBFS(88);
 
-            List<string> result =Program.FizzBuzzTree(binaryTree);
+            List<string> result = Program.FizzBuzzTree(binaryTree);
 
 
-            List<string> expected = new List<string> { "Buzz","11","7","4","88","FizzBuzz","Fizz" };
+            List<string> expected = new List<string> { "Buzz", "11", "7", "4", "88", "FizzBuzz", "Fizz" };
             Assert.Equal(expected, result);
         }
+    
+      
+            [Theory]
+            [InlineData(new[] { 55, 21, 8, 99, 45, 33 }, new[] { 8, 21, 33, 45, 55, 99 })]
+            [InlineData(new[] { 17, 42, 9, 77, 28 }, new[] { 9, 17, 28, 42, 77 })]
+            [InlineData(new[] { 2, 11, 6, 1, 9, 3 }, new[] { 1, 2, 3, 6, 9, 11 })]
+            public void TestInsertionSort(int[] input, int[] expectedOutput)
+            {
+                // Arrange
+
+                // Act
+                int[] sortedArray = Program.InsertionSort(input);
+
+                // Assert
+                Assert.Equal(expectedOutput, sortedArray);
+            }
+
+
+        }
     }
-    }
+

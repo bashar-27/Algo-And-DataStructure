@@ -13,72 +13,32 @@ namespace InsertShift
 
         static void Main(string[] args)
         {
-
-            BinarySearchTree testTree = new BinarySearchTree();
-            testTree.AddBFS(2);
-            testTree.AddBFS(5);
-            testTree.AddBFS(2);
-            testTree.AddBFS(6);
-            testTree.AddBFS(9);
-            testTree.AddBFS(11);
-            testTree.AddBFS(5);
-            testTree.AddBFS(7);
-            testTree.AddBFS(30);
-            testTree.AddBFS(4);
-            testTree.AddBFS(30);
-            testTree.AddBFS(88);
-            testTree.Add(342);
-
-            Console.WriteLine(testTree.Contains(90));
-            Console.WriteLine(testTree.Contains(1));
-            Console.WriteLine("\n\n\nMaximum element in tree is " + testTree.Max_tree());
-            IList<int> results = testTree.PreOrder(testTree.root);
-            IList<int> results2 = testTree.PostOrder(testTree.root);
-            IList<int> results3 = testTree.InOrder(testTree.root);
-            List<int> results4 = testTree.BFS(testTree.root);
-            List<string> fizzbuzzlist = FizzBuzzTree(testTree);
-
-
-
-            Console.WriteLine("--------------PreOrder-------------");
-            foreach (int item in results)
+            int[] arr = { 1, 5, 8, 16, 32, 25, 74, 20 };
+            int[] arrStored = InsertionSort(arr);
+            for (int i = 0; i < arrStored.Length; i++)
             {
-                Console.Write(item + " ");
+                Console.Write(arrStored[i]+" ");
+            }
+            Console.WriteLine();
 
+
+        }
+        public static int[] InsertionSort(int[] arr)
+        {
+            int key, x;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                key = arr[i];
+                x = i - 1;
+                while (x >= 0 && arr[x] > key)
+                {
+                    arr[x + 1] = arr[x];
+                    x--;
                 }
-                Console.WriteLine("\n\n\n");
-            Console.WriteLine("--------------FizzBuzzed Tree PreOrder Traversal:--------------");
-
-       
-            foreach (var item in fizzbuzzlist)
-            {
-                Console.Write(item+" ");
+                arr[x+1] = key;
 
             }
-            Console.WriteLine("\n\n\n");
-
-                //Console.WriteLine("\n");
-                //Console.WriteLine("--------------PostOrder------------");
-                //foreach (int item in results2)
-                //{
-                //    Console.Write(item + " ");
-
-                //}
-                //Console.WriteLine("\n");
-                //Console.WriteLine("--------------InOrder--------------");
-                //foreach (int item in results3)
-                //{
-                //    Console.Write(item + " ");
-
-
-                //}
-                //Console.WriteLine("\n\n\n");
-                //Console.WriteLine("--------------BFS--------------");
-                //foreach (int item in results4)
-                //{
-                //    Console.Write(item + " ");
-
-                //}
+            return arr;
         }
         public static List<string> FizzBuzzTree(BinarySearchTree tree)
         {
@@ -135,6 +95,7 @@ namespace InsertShift
 
 
         }
+   
     }
 }
 

@@ -113,6 +113,37 @@ namespace InsertShift
             }
             return results;
 
+        } 
+        public int SumOdd(Node root)
+        {
+            Queue<Node> queue = new Queue<Node>();
+            List <int> results = new List<int>();
+            int sum = 0;
+
+            if(root == null) return 0;
+
+            queue.Enqueue(root);
+            while(queue.Count != 0)
+            {
+                Node newNode = queue.Dequeue();
+                results.Add(newNode.Data);
+                if (newNode.Data % 2 != 0)
+                {
+                  //  Console.WriteLine(newNode.Data);
+                    sum += newNode.Data;
+                }
+                if(newNode.left != null)
+                {
+                    queue.Enqueue(newNode.left);
+                }
+                if(newNode.right != null)
+                {
+                    queue.Enqueue(newNode.right);
+                }
+            }
+            
+            return sum;
+
         }
         public int Max_tree()
         {
