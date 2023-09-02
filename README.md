@@ -21,3 +21,4 @@
 | Challenge 17:           | [BFS](CodeChallenge/BFS.md)                                                                                          |
 | Challenge 18:           |[FizzBuzz Tree](CodeChallenge/fizzBuzzTree.md)                                                                        |
 | Challenge 19:           |[Insertion Sort](CodeChallenge/insertionSort.md)                                                                      |
+| Challenge 20:           |[Merge Sort](CodeChallenge/mergeSort.md)                                                                              |
