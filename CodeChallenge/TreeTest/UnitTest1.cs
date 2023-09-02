@@ -304,16 +304,34 @@ public class BinarySearchTreeTests
             [InlineData(new[] { 2, 11, 6, 1, 9, 3 }, new[] { 1, 2, 3, 6, 9, 11 })]
             public void TestInsertionSort(int[] input, int[] expectedOutput)
             {
-                // Arrange
+              
 
                 // Act
                 int[] sortedArray = Program.InsertionSort(input);
 
-                // Assert
+            
                 Assert.Equal(expectedOutput, sortedArray);
             }
+      
+        
+        
+        
+        //Merge sort test
+        [Theory]
 
+        [InlineData(new[] { 8, 4, 23, 42, 16, 15 }, new[] { 4, 8, 15, 16, 23, 42 })]
+        [InlineData(new[] { 5, 4, 3, 2, 1 }, new[] { 1, 2, 3, 4, 5 })]
+        [InlineData(new[] { 1, 2, 3, 4, 5 }, new[] { 1, 2, 3, 4, 5 })]
+        [InlineData(new[] { 1 }, new[] { 1 })]
+        [InlineData(new int[] { }, new int[] { })] // Empty arr
+        public void MergeSort_Sorts(int[] input, int[] expected)
+        {
+            
 
+          int []arr= Program.MergeSort(input, 0, input.Length - 1);
+
+            Assert.Equal(expected, input);
         }
+    }
     }
 

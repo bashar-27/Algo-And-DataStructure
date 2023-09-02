@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InsertShift")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff741db19d19b165ddb05ae32b11f4fc863ee5bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7493d16bcef62da5035ae285c5d89c074045c0af")]
 [assembly: System.Reflection.AssemblyProductAttribute("InsertShift")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InsertShift")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

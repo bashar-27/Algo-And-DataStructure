@@ -13,16 +13,96 @@ namespace InsertShift
 
         static void Main(string[] args)
         {
-            int[] arr = { 1, 5, 8, 16, 32, 25, 74, 20 };
-            int[] arrStored = InsertionSort(arr);
-            for (int i = 0; i < arrStored.Length; i++)
-            {
-                Console.Write(arrStored[i]+" ");
-            }
-            Console.WriteLine();
-
+            int[] arr = { 8, 4, 23, 42, 16, 15 };
+            int n = arr.Length;
+            Console.WriteLine("Array before call function"); 
+            Print(arr, n);
+            int [] mergedArr = MergeSort(arr,0,n-1);
+            Console.WriteLine("Array after call function"); 
+            Print(mergedArr, n);
+          
 
         }
+        public static int[] Merge(int[] arr, int left, int mid, int right)
+        {
+            int i, j = 0;
+            int k = left;
+            int lArr = mid - left + 1;              //to find size left array
+            int rArr = right - mid;                 //to find size right array
+            int[] leftSubArr = new int[lArr];       //new sub left array with lArr size
+            int[] rightSubArr = new int[rArr];      //new sub right array with rArr size
+
+            for (i = 0; i < lArr; i++)
+                leftSubArr[i] = arr[left + i];      //for fill new sub left array
+            for (j = 0; j < rArr; j++)
+                rightSubArr[j] = arr[mid + 1 + j];  //for fill new sub right array
+
+            i = 0;
+            j = 0;
+            while (i < lArr && j < rArr)
+            {
+                if (leftSubArr[i] <= rightSubArr[j])
+                {
+                    arr[k] = leftSubArr[i];
+                    i++;
+                }
+                else
+                {
+                    arr[k] = rightSubArr[j];
+                    j++;
+                }
+                k++;
+            }
+            //if one side of array have no elements and other side still have an elements
+            while (i < lArr)
+            {
+                arr[k] = leftSubArr[i];
+                i++;
+                k++;
+            }
+            while (j < rArr)
+            {
+                arr[k] = rightSubArr[j];
+                j++;
+                k++;
+            }
+
+            return arr;
+        }
+
+       
+        public static int[] MergeSort(int[] arr, int left, int right)
+        {
+            if (left < right)
+            {
+                int mid = left + (right - left) / 2;
+                MergeSort(arr, left, mid);
+                MergeSort(arr, mid + 1, right);
+                arr = Merge(arr, left, mid, right);
+            }
+
+            return arr;
+        }
+    
+    public static void Print(int[]arr ,int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(arr[i]+" ");
+            }
+            Console.WriteLine();
+        }
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         public static int[] InsertionSort(int[] arr)
         {
             int key, x;
@@ -95,6 +175,7 @@ namespace InsertShift
 
 
         }
+
    
     }
 }
