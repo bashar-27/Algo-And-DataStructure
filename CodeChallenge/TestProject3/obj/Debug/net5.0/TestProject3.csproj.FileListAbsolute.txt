@@ -105,3 +105,4 @@ C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestProject3\o
 C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestProject3\obj\Debug\net5.0\TestProject3.pdb
 C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestProject3\obj\Debug\net5.0\TestProject3.genruntimeconfig.cache
 C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestProject3\obj\Debug\net5.0\ref\TestProject3.dll
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestProject3\obj\Debug\net5.0\TestProject3.sourcelink.json

@@ -104,3 +104,4 @@ C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TreeTest\obj\D
 C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TreeTest\obj\Debug\net7.0\TreeTest.pdb
 C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TreeTest\obj\Debug\net7.0\TreeTest.genruntimeconfig.cache
 C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TreeTest\obj\Debug\net7.0\ref\TreeTest.dll
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TreeTest\obj\Debug\net7.0\TreeTest.sourcelink.json

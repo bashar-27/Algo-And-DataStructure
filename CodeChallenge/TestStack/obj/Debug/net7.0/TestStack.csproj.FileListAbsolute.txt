@@ -104,3 +104,4 @@ C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestStack\obj\
 C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestStack\obj\Debug\net7.0\TestStack.pdb
 C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestStack\obj\Debug\net7.0\TestStack.genruntimeconfig.cache
 C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestStack\obj\Debug\net7.0\ref\TestStack.dll
+C:\Users\Bashar\source\repos\Algo-And-DataStructure\CodeChallenge\TestStack\obj\Debug\net7.0\TestStack.sourcelink.json

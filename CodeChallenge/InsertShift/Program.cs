@@ -13,72 +13,112 @@ namespace InsertShift
 
         static void Main(string[] args)
         {
+            int[] arr = { 8, 4, 23, 42, 16, 15 };
+            int n = arr.Length;
+            Console.WriteLine("Array before call function"); 
+            Print(arr, n);
+            int [] mergedArr = MergeSort(arr,0,n-1);
+            Console.WriteLine("Array after call function"); 
+            Print(mergedArr, n);
+          
 
-            BinarySearchTree testTree = new BinarySearchTree();
-            testTree.AddBFS(2);
-            testTree.AddBFS(5);
-            testTree.AddBFS(2);
-            testTree.AddBFS(6);
-            testTree.AddBFS(9);
-            testTree.AddBFS(11);
-            testTree.AddBFS(5);
-            testTree.AddBFS(7);
-            testTree.AddBFS(30);
-            testTree.AddBFS(4);
-            testTree.AddBFS(30);
-            testTree.AddBFS(88);
-            testTree.Add(342);
+        }
+        public static int[] Merge(int[] arr, int left, int mid, int right)
+        {
+            int i, j = 0;
+            int k = left;
+            int lArr = mid - left + 1;              //to find size left array
+            int rArr = right - mid;                 //to find size right array
+            int[] leftSubArr = new int[lArr];       //new sub left array with lArr size
+            int[] rightSubArr = new int[rArr];      //new sub right array with rArr size
 
-            Console.WriteLine(testTree.Contains(90));
-            Console.WriteLine(testTree.Contains(1));
-            Console.WriteLine("\n\n\nMaximum element in tree is " + testTree.Max_tree());
-            IList<int> results = testTree.PreOrder(testTree.root);
-            IList<int> results2 = testTree.PostOrder(testTree.root);
-            IList<int> results3 = testTree.InOrder(testTree.root);
-            List<int> results4 = testTree.BFS(testTree.root);
-            List<string> fizzbuzzlist = FizzBuzzTree(testTree);
+            for (i = 0; i < lArr; i++)
+                leftSubArr[i] = arr[left + i];      //for fill new sub left array
+            for (j = 0; j < rArr; j++)
+                rightSubArr[j] = arr[mid + 1 + j];  //for fill new sub right array
 
-
-
-            Console.WriteLine("--------------PreOrder-------------");
-            foreach (int item in results)
+            i = 0;
+            j = 0;
+            while (i < lArr && j < rArr)
             {
-                Console.Write(item + " ");
-
+                if (leftSubArr[i] <= rightSubArr[j])
+                {
+                    arr[k] = leftSubArr[i];
+                    i++;
                 }
-                Console.WriteLine("\n\n\n");
-            Console.WriteLine("--------------FizzBuzzed Tree PreOrder Traversal:--------------");
+                else
+                {
+                    arr[k] = rightSubArr[j];
+                    j++;
+                }
+                k++;
+            }
+            //if one side of array have no elements and other side still have an elements
+            while (i < lArr)
+            {
+                arr[k] = leftSubArr[i];
+                i++;
+                k++;
+            }
+            while (j < rArr)
+            {
+                arr[k] = rightSubArr[j];
+                j++;
+                k++;
+            }
+
+            return arr;
+        }
 
        
-            foreach (var item in fizzbuzzlist)
+        public static int[] MergeSort(int[] arr, int left, int right)
+        {
+            if (left < right)
             {
-                Console.Write(item+" ");
+                int mid = left + (right - left) / 2;
+                MergeSort(arr, left, mid);
+                MergeSort(arr, mid + 1, right);
+                arr = Merge(arr, left, mid, right);
+            }
+
+            return arr;
+        }
+    
+    public static void Print(int[]arr ,int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(arr[i]+" ");
+            }
+            Console.WriteLine();
+        }
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        public static int[] InsertionSort(int[] arr)
+        {
+            int key, x;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                key = arr[i];
+                x = i - 1;
+                while (x >= 0 && arr[x] > key)
+                {
+                    arr[x + 1] = arr[x];
+                    x--;
+                }
+                arr[x+1] = key;
 
             }
-            Console.WriteLine("\n\n\n");
-
-                //Console.WriteLine("\n");
-                //Console.WriteLine("--------------PostOrder------------");
-                //foreach (int item in results2)
-                //{
-                //    Console.Write(item + " ");
-
-                //}
-                //Console.WriteLine("\n");
-                //Console.WriteLine("--------------InOrder--------------");
-                //foreach (int item in results3)
-                //{
-                //    Console.Write(item + " ");
-
-
-                //}
-                //Console.WriteLine("\n\n\n");
-                //Console.WriteLine("--------------BFS--------------");
-                //foreach (int item in results4)
-                //{
-                //    Console.Write(item + " ");
-
-                //}
+            return arr;
         }
         public static List<string> FizzBuzzTree(BinarySearchTree tree)
         {
@@ -135,6 +175,8 @@ namespace InsertShift
 
 
         }
+
+   
     }
 }
 
