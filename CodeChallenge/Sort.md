@@ -1,4 +1,4 @@
-# challenge 28 :Movie Sort
+# challenge 28 :Movies Sort
 ## explanation
 This code organizes movies, sorts them by title and year, and then outputs the sorted lists. It also contains a Movie class to define the movie structure and a Sorting class with methods for sorting movies. The CompareTitles method helps with title comparisons while ignoring common articles.
 ## whiteboard:
