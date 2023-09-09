@@ -4,8 +4,8 @@
 
 
 
-| Challenge                            | Repository Link                                                                                 |
-|--------------------------------------|-------------------------------------------------------------------------------------------------|
+| Challenge                            | Repository Link                                                                                         |
+|--------------------------------------|-------------------------------------------------------------------------------------------------        |
 | Challenge 1:            | [Reverse Array ](https://github.com/bashar-27/Algo-And-DataStructure/tree/master/CodeChallenge/DSandAlgo)            |
 | Challenge 2:            | [Insert Shift Array](https://github.com/bashar-27/Algo-And-DataStructure/blob/master/CodeChallenge/shiftArr.md)      |
 | Challenge 3:            | [Binary Search ](https://github.com/bashar-27/Algo-And-DataStructure/blob/master/CodeChallenge/BinaryTree.md)        |
@@ -22,3 +22,4 @@
 | Challenge 18:           |[FizzBuzz Tree](CodeChallenge/fizzBuzzTree.md)                                                                        |
 | Challenge 19:           |[Insertion Sort](CodeChallenge/insertionSort.md)                                                                      |
 | Challenge 20:           |[Merge Sort](CodeChallenge/mergeSort.md)                                                                              |
+| Challenge 28:           |[Sorting](CodeChallenge/Sort.md)                                                                                      |
