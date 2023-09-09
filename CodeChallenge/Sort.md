@@ -3,8 +3,9 @@
 This code organizes movies, sorts them by title and year, and then outputs the sorted lists. It also contains a Movie class to define the movie structure and a Sorting class with methods for sorting movies. The CompareTitles method helps with title comparisons while ignoring common articles.
 ## whiteboard:
 
+![Screenshot 2023-09-09 214919](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/6b8d3698-c5cf-4e23-8126-009a25f5415c)
 
-![Screenshot 2023-09-09 205242](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/6e7591c2-4b8a-4dcd-a008-eb83b519f553)
+
 
 ## Step by Step :
 
