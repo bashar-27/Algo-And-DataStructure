@@ -8,6 +8,28 @@ namespace InsertShift
 
     public class Program
     {
+        public static string RepeatedWord(string text)
+        {
+
+            string[] words = text.Split(new char[] { ' ', '.', ',', ';','#', '!', '$','?',':' }, StringSplitOptions.RemoveEmptyEntries);
+
+            Hashtable duplicateWord = new Hashtable();
+
+            foreach (string word in words)
+            {
+                string clearString = word.ToLower();
+                if (duplicateWord.Has(clearString))
+                {
+                    return clearString;
+                }
+                else
+                {
+                    duplicateWord.Set(clearString, true);
+                }
+            }
+
+            return null;
+        }
 
 
 
@@ -19,14 +41,20 @@ namespace InsertShift
             hashtable.Set("age", 23);
             hashtable.Set("city", "Amman");
 
-            Console.WriteLine("Name: " + hashtable.Get("name"));
-            Console.WriteLine("Age: " + hashtable.Get("age"));
-            Console.WriteLine("Has city: " + hashtable.Has("city"));
-            Console.WriteLine("Has country: " + hashtable.Has("country"));
+            //Console.WriteLine("Name: " + hashtable.Get("name"));
+           // Console.WriteLine("Age: " + hashtable.Get("age"));
+           // Console.WriteLine("Has city: " + hashtable.Has("city"));
+           // Console.WriteLine("Has country: " + hashtable.Has("country"));
 
-            List<string> keys = hashtable.Keys();
-            Console.WriteLine("Keys: " + string.Join(", ", keys));
+            string text = "Once , , upon a time, there was a brave princess who...";
+            string repeatedWord =RepeatedWord(text);
+            Console.WriteLine("First repeated word: " + repeatedWord);
+
+
+           // List<string> keys = hashtable.Keys();
+           //Console.WriteLine("Keys: " + string.Join(", ", keys));
         }
+
     }
 
     public class KeyValue
@@ -123,5 +151,9 @@ namespace InsertShift
             return keys;
         }
 
+     
     }
+
+
+
 }
