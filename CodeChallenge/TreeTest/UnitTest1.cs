@@ -76,7 +76,58 @@ namespace TreeTest
 
             Assert.InRange(hash, 0, Hashtable.Size - 1);
         }
+        [Fact]
+        public void RepeatedWord()
+        {
+            
+            string text = "This is a test. This is only a test.";
+
+           
+            string result = Program.RepeatedWord(text);
+
+            
+            Assert.Equal("this", result);
+        }
+
+        [Fact]
+        public void RepeatedWord2()
+        {
+         
+            string text = "No repeated words in this text.";
+
+        
+            string result = Program.RepeatedWord(text);
+
+            Assert.Null(result);
+        }
+
+        [Fact]
+        public void RepeatedWord3()
+        {
+           
+            string text = "This is a Test. This is only a test.";
+
+            
+            string result = Program.RepeatedWord(text);
+
+            
+            Assert.Equal("this", result);
+        }
+
+        [Fact]
+        public void RepeatedWord4()
+        {
+          
+            string text = "$100 is more than $50, but less than $200.";
+
+           
+            string result = Program.RepeatedWord(text);
+
+           
+            Assert.Equal("than", result);
+        }
     }
+}
 
 
 //        [Fact]
