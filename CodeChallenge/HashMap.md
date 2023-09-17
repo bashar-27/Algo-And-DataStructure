@@ -2,6 +2,7 @@
 ## Explanation
  the code demonstrates the Implemintationn for the Hash Tables And if you give it an string(sentance) it will find the the first word that is repeated  .
 
+![Screenshot 2023-09-17 211424](https://github.com/bashar-27/Algo-And-DataStructure/assets/83985765/c6907d47-0ab7-463c-9f93-2410bd1eee13)
 
 
 
