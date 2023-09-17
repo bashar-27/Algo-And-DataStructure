@@ -13,44 +13,115 @@ namespace InsertShift
 
         static void Main(string[] args)
         {
-            List<Movie> movies = new List<Movie>
-{
-    new Movie { Title = "Your Name", Year = 2016, Genres = new List<string> { "Animation", "Drama", "Fantasy" } },
-    new Movie { Title = "Spirited Away", Year = 2001, Genres = new List<string> { "Animation", "Adventure", "Family" } },
-    new Movie { Title = "Akira", Year = 1988, Genres = new List<string> { "Animation", "Action", "Sci-Fi" } },
-    new Movie { Title = "Grave of the Fireflies", Year = 1988, Genres = new List<string> { "Animation", "Drama", "War" } },
-    new Movie { Title = "Princess Mononoke", Year = 1997, Genres = new List<string> { "Animation", "Adventure", "Fantasy" } },
-    new Movie { Title = "Perfect Blue", Year = 1997, Genres = new List<string> { "Animation", "Horror", "Mystery" } },
-    new Movie { Title = "Ghost in the Shell", Year = 1995, Genres = new List<string> { "Animation", "Action", "Crime" } }
-    // Add more anime movies as needed
-};
-            List<Movie> sortedByYear = Sorting.SortByYear(new List<Movie>(movies));
-            List<Movie> sortedByTitle = Sorting.SortByName(new List<Movie>(movies));
+            Hashtable hashtable = new Hashtable();
 
-            Console.WriteLine("{0,-30} {1}", "Title", "Year");
-            Console.WriteLine(new string('-', 36));
+            hashtable.Set("name", "Bashar");
+            hashtable.Set("age", 23);
+            hashtable.Set("city", "Amman");
 
-            Console.WriteLine("\n--------------Sorted by Years---------------:");
-            foreach (var movie in sortedByYear)
-            {
-                Console.WriteLine("{0,-30} {1}", movie.Title, movie.Year);
-            }
+            Console.WriteLine("Name: " + hashtable.Get("name"));
+            Console.WriteLine("Age: " + hashtable.Get("age"));
+            Console.WriteLine("Has city: " + hashtable.Has("city"));
+            Console.WriteLine("Has country: " + hashtable.Has("country"));
 
-
-            Console.WriteLine("\n--------------Sorted by Title----------------");
-            foreach (var movie in sortedByTitle)
-            {
-                Console.WriteLine($"Title: {movie.Title}.");
-
-
-            }
-
-
-
+            List<string> keys = hashtable.Keys();
+            Console.WriteLine("Keys: " + string.Join(", ", keys));
         }
     }
+
+    public class KeyValue
+    {
+        public string Key { get; set; }
+        public object Value { get; set; }
+    }
+
+    public class Hashtable
+    {
+        public const int Size = 100;
+        public List<List<KeyValue>> table;
+
+        public Hashtable()
+        {
+            table = new List<List<KeyValue>>(Size);
+            for (int i = 0; i < Size; i++)
+            {
+                table.Add(new List<KeyValue>());
+            }
+        }
+
+        public int CalculateHash(string key)
+        {
+            int hash = 0;
+            foreach (char c in key)
+            {
+                hash += c;
+            }
+            return hash % Size;
+        }
+
+        public void Set(string key, object value)
+        {
+            int index = CalculateHash(key);
+            List<KeyValue> bucket = table[index];
+
+            foreach (var kvp in bucket)
+            {
+                if (kvp.Key == key)
+                {
+                    kvp.Value = value;
+                    return;
+                }
+            }
+
+            bucket.Add(new KeyValue { Key = key, Value = value });
+        }
+
+        public object Get(string key)
+        {
+            int index = CalculateHash(key);
+            List<KeyValue> bucket = table[index];
+
+            foreach (var kvp in bucket)
+            {
+                if (kvp.Key == key)
+                {
+                    return kvp.Value;
+                }
+            }
+
+            return null;
+        }
+
+        public bool Has(string key)
+        {
+            int index = CalculateHash(key);
+            List<KeyValue> bucket = table[index];
+
+            foreach (var kvp in bucket)
+            {
+                if (kvp.Key == key)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public List<string> Keys()
+        {
+            List<string> keys = new List<string>();
+
+            foreach (var bucket in table)
+            {
+                foreach (var kvp in bucket)
+                {
+                    keys.Add(kvp.Key);
+                }
+            }
+
+            return keys;
+        }
+
+    }
 }
-
-
-
-    
