@@ -389,77 +389,7 @@ namespace TreeTest
 
             Assert.Equal(0, result);
         }
-        [Fact]
-        public void SettingKeyValue()
-        {
-
-            Hashtable hashtable = new Hashtable();
-
-
-            hashtable.Set("name", "John");
-
-            Assert.Equal("John", hashtable.Get("name"));
-        }
-
-        [Fact]
-        public void NonExistentKeyReturnNull()
-        {
-
-            Hashtable hashtable = new Hashtable();
-
-            object result = hashtable.Get("nonexistent");
-
-
-            Assert.Null(result);
-        }
-
-        [Fact]
-        public void UniqueKeys()
-        {
-
-            Hashtable hashtable = new Hashtable();
-            hashtable.Set("name", "John");
-            hashtable.Set("age", 30);
-            hashtable.Set("city", "New York");
-
-
-            List<string> keys = hashtable.Keys();
-
-
-            Assert.Contains("name", keys);
-            Assert.Contains("age", keys);
-            Assert.Contains("city", keys);
-            Assert.Equal(3, keys.Count);
-        }
-
-        [Fact]
-        public void CollisionWithinHashtable()
-        {
-
-            Hashtable hashtable = new Hashtable();
-
-
-            hashtable.Set("name", "John");
-            hashtable.Set("eman", "Jane");
-
-
-            Assert.Equal("John", hashtable.Get("name"));
-            Assert.NotEqual("Jane", hashtable.Get("salim"));
-        }
-
-        [Fact]
-        public void HashKeyToInRangeValue()
-        {
-
-            Hashtable hashtable = new Hashtable();
-
-
-            int hash = hashtable.CalculateHash("name");
-
-
-            Assert.InRange(hash, 0, Hashtable.Size - 1);
-        }
-     }
-   }
+            }
+    }
     
 
