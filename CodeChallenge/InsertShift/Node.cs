@@ -8,6 +8,7 @@ namespace InsertShift
 {
     public class Node
     {
+        public int key;
         public int Data { get; set; }
         public Node Next { get; set; }
         // public Node root { get; set; }
