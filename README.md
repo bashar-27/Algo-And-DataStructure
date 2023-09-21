@@ -24,4 +24,5 @@
 | Challenge 20:           |[Merge Sort](CodeChallenge/mergeSort.md)                                                                              |
 | Challenge 28:           |[Sorting](CodeChallenge/Sort.md)                                                                                      |
 | Challenge 30:           |[Hash Table](CodeChallenge/Hash.md)                                                                                   | 
-| Challenge 31:           |[HashMap](https://github.com/bashar-27/Algo-And-DataStructure/blob/master/CodeChallenge/HashMap.md)                   |                                 
+| Challenge 31:           |[HashMap](https://github.com/bashar-27/Algo-And-DataStructure/blob/master/CodeChallenge/HashMap.md)                   |   
+| Challenge 32:           |[HashTable](CodeChallenge/InterSection.md)                                                                            |
