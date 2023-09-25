@@ -10,7 +10,8 @@ namespace InsertShift
 
     public class Program
     {
-        //left join method in hashmap left join
+        //left join method in hashmap left join based on master
+
         public static List<List<string>> LeftJoin(Dictionary<string, string> synonyms, Dictionary<string, string> antonyms)
         {
             List<List<string>> result = synonyms.Keys.Select(key =>
