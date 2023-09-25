@@ -331,8 +331,107 @@ namespace TreeTest
         //          int []arr= Program.MergeSort(input, 0, input.Length - 1);
 
         //            Assert.Equal(expected, input);
-    
-        [Fact]
+
+        public class LeftJoinTests
+        {
+            [Fact]
+            public void HappyPath_ShouldReturnJoinedLists()
+            {
+                // Arrange
+                Dictionary<string, string> synonyms = new Dictionary<string, string>
+        {
+            { "happy", "joyful" },
+            { "sad", "unhappy" },
+            { "angry", "furious" }
+        };
+
+                Dictionary<string, string> antonyms = new Dictionary<string, string>
+        {
+            { "happy", "unhappy" },
+            { "sad", "joyful" },
+            { "angry", "calm" }
+        };
+
+                List<List<string>> expected = new List<List<string>>
+        {
+            new List<string> { "happy", "joyful", "unhappy" },
+            new List<string> { "sad", "unhappy", "joyful" },
+            new List<string> { "angry", "furious", "calm" }
+        };
+
+                // Act
+                List<List<string>> result = Program.LeftJoin(synonyms, antonyms);
+
+                // Assert
+                Assert.Equal(expected, result);
+            }
+
+            [Fact]
+            public void EdgeCase_ShouldHandleEdgeCase()
+            {
+                // Arrange
+                Dictionary<string, string> synonyms = new Dictionary<string, string>
+        {
+            { "happy", "joyful" },
+            { "sad", "unhappy" },
+            { "angry", "furious" }
+        };
+
+                Dictionary<string, string> antonyms = new Dictionary<string, string>
+        {
+            { "happy", "unhappy" },
+            { "sad", "joyful" },
+            { "angry", "calm" },
+            { "joyful", "happy" } // Adding an extra entry for an edge case
+        };
+
+                List<List<string>> expected = new List<List<string>>
+        {
+            new List<string> { "happy", "joyful", "unhappy" },
+            new List<string> { "sad", "unhappy", "joyful" },
+            new List<string> { "angry", "furious", "calm" }
+        };
+
+                // Act
+                List<List<string>> result = Program.LeftJoin(synonyms, antonyms);
+
+                // Assert
+                Assert.Equal(expected, result);
+            }
+
+            [Fact]
+            public void ExpectedFailure_ShouldReturnCorrectResult()
+            {
+                // Arrange
+                Dictionary<string, string> synonyms = new Dictionary<string, string>
+    {
+        { "happy", "joyful" },
+        { "sad", "unhappy" },
+        { "angry", "furious" }
+    };
+
+                Dictionary<string, string> antonyms = new Dictionary<string, string>
+    {
+        { "happy", "unhappy" },
+        { "sad", "joyful" },
+        { "angry", "calm" }
+    };
+
+                List<List<string>> expected = new List<List<string>>
+    {
+        new List<string> { "happy", "joyful", "unhappy" },
+        new List<string> { "sad", "happy", "joyful" }, // This line is changed
+        new List<string> { "angry", "furious", "calm" }
+    };
+
+                // Act
+                List<List<string>> result = Program.LeftJoin(synonyms, antonyms);
+
+                // Assert
+                Assert.NotEqual(expected, result);
+            }
+        }
+            [Fact]
         public void SortByName()
         {
             List<Movie> movies = new List<Movie>
