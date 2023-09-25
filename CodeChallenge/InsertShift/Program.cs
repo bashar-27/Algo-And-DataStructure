@@ -7,9 +7,10 @@ namespace InsertShift
 {
 
 
-
     public class Program
     {
+
+
         public static List<List<string>> LeftJoin(Dictionary<string, string> synonyms, Dictionary<string, string> antonyms)
         {
             List<List<string>> result = synonyms.Keys.Select(key =>
@@ -19,14 +20,13 @@ namespace InsertShift
                 return new List<string> { key, synonymValue, antonymValue };
             }).ToList();
 
-
             return result;
         }
 
 
         static void Main(string[] args)
         {
-         
+
             Dictionary<string, string> synonymsHashTable = new Dictionary<string, string>
         {
             { "diligent", "employed" },
@@ -45,32 +45,16 @@ namespace InsertShift
             { "wrath", "delight" }
         };
 
-           
+
             List<List<string>> result = LeftJoin(synonymsHashTable, antonymsHashTable);
 
-            
+
             Console.WriteLine("The Result:");
             foreach (var row in result)
             {
                 Console.WriteLine($"[{string.Join(", ", row)}]");
             }
-
-            //Hashtable hashtable = new Hashtable();
-
-            //hashtable.Set("name", "Bashar");
-            //hashtable.Set("age", 23);
-            //hashtable.Set("city", "Amman");
-
-            //Console.WriteLine("Name: " + hashtable.Get("name"));
-            //Console.WriteLine("Age: " + hashtable.Get("age"));
-            //Console.WriteLine("Has city: " + hashtable.Has("city"));
-            //Console.WriteLine("Has country: " + hashtable.Has("country"));
-
-            //List<string> keys = hashtable.Keys();
-            //Console.WriteLine("Keys: " + string.Join(", ", keys));
-
         }
-
     }
 
     public class KeyValue
@@ -167,9 +151,5 @@ namespace InsertShift
             return keys;
         }
 
-     
     }
-
-
-
 }
