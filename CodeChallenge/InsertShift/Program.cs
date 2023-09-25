@@ -1,31 +1,72 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace InsertShift
 {
 
 
+
     public class Program
     {
+        public static List<List<string>> LeftJoin(Dictionary<string, string> synonyms, Dictionary<string, string> antonyms)
+        {
+            List<List<string>> result = synonyms.Keys.Select(key =>
+            {
+                string synonymValue = synonyms[key];
+                string antonymValue = antonyms.TryGetValue(key, out string value) ? value : null;
+                return new List<string> { key, synonymValue, antonymValue };
+            }).ToList();
 
+            return result;
+        }
 
 
         static void Main(string[] args)
         {
-            Hashtable hashtable = new Hashtable();
+         
+            Dictionary<string, string> synonymsHashTable = new Dictionary<string, string>
+        {
+            { "diligent", "employed" },
+            { "fond", "enamored" },
+            { "guide", "usher" },
+            { "outfit", "garb" },
+            { "wrath", "anger" }
+        };
 
-            hashtable.Set("name", "Bashar");
-            hashtable.Set("age", 23);
-            hashtable.Set("city", "Amman");
+            Dictionary<string, string> antonymsHashTable = new Dictionary<string, string>
+        {
+            { "diligent", "idle" },
+            { "fond", "averse" },
+            { "guide", "follow" },
+            { "flow", "jam" },
+            { "wrath", "delight" }
+        };
 
-            Console.WriteLine("Name: " + hashtable.Get("name"));
-            Console.WriteLine("Age: " + hashtable.Get("age"));
-            Console.WriteLine("Has city: " + hashtable.Has("city"));
-            Console.WriteLine("Has country: " + hashtable.Has("country"));
+           
+            List<List<string>> result = LeftJoin(synonymsHashTable, antonymsHashTable);
 
-            List<string> keys = hashtable.Keys();
-            Console.WriteLine("Keys: " + string.Join(", ", keys));
+            
+            Console.WriteLine("The Result:");
+            foreach (var row in result)
+            {
+                Console.WriteLine($"[{string.Join(", ", row)}]");
+            }
+
+            //Hashtable hashtable = new Hashtable();
+
+            //hashtable.Set("name", "Bashar");
+            //hashtable.Set("age", 23);
+            //hashtable.Set("city", "Amman");
+
+            //Console.WriteLine("Name: " + hashtable.Get("name"));
+            //Console.WriteLine("Age: " + hashtable.Get("age"));
+            //Console.WriteLine("Has city: " + hashtable.Has("city"));
+            //Console.WriteLine("Has country: " + hashtable.Has("country"));
+
+            //List<string> keys = hashtable.Keys();
+            //Console.WriteLine("Keys: " + string.Join(", ", keys));
         }
     }
 
