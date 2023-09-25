@@ -19,6 +19,7 @@ namespace InsertShift
                 return new List<string> { key, synonymValue, antonymValue };
             }).ToList();
 
+
             return result;
         }
 
@@ -67,7 +68,9 @@ namespace InsertShift
 
             //List<string> keys = hashtable.Keys();
             //Console.WriteLine("Keys: " + string.Join(", ", keys));
+
         }
+
     }
 
     public class KeyValue
@@ -164,5 +167,9 @@ namespace InsertShift
             return keys;
         }
 
+     
     }
+
+
+
 }

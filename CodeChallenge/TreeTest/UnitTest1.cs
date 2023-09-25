@@ -76,8 +76,114 @@ namespace TreeTest
 
             Assert.InRange(hash, 0, Hashtable.Size - 1);
         }
+        [Fact]
+        public void RepeatedWord()
+        {
+            
+            string text = "This is a test. This is only a test.";
+
+           
+            string result = Program.RepeatedWord(text);
+
+            
+            Assert.Equal("this", result);
+        }
+
+        [Fact]
+        public void RepeatedWord2()
+        {
+         
+            string text = "No repeated words in this text.";
+
+        
+            string result = Program.RepeatedWord(text);
+
+            Assert.Null(result);
+        }
+
+        [Fact]
+        public void RepeatedWord3()
+        {
+           
+            string text = "This is a Test. This is only a test.";
+
+            
+            string result = Program.RepeatedWord(text);
+
+            
+            Assert.Equal("this", result);
+        }
+
+        [Fact]
+        public void RepeatedWord4()
+        {
+          
+            string text = "$100 is more than $50, but less than $200.";
+
+           
+            string result = Program.RepeatedWord(text);
+
+           
+            Assert.Equal("than", result);
+        }
+        [Fact]
+        public void FindCommonUsingHashMap()
+        {
+
+            Node root1 = null;
+            root1 = Program.insert(root1, 5);
+            root1 = Program.insert(root1, 1);
+            root1 = Program.insert(root1, 10);
+            root1 = Program.insert(root1, 0);
+            root1 = Program.insert(root1, 4);
+            root1 = Program.insert(root1, 7);
+            root1 = Program.insert(root1, 9);
+
+            Node root2 = null;
+            root2 = Program.insert(root2, 10);
+            root2 = Program.insert(root2, 7);
+            root2 = Program.insert(root2, 20);
+            root2 = Program.insert(root2, 4);
+            root2 = Program.insert(root2, 9);
+
+            List<int> expectedCommonNodes = new List<int> { 10, 7, 4, 9 };
+
+
+            List<int> actualCommonNodes = TreeIntersection.FindIntersection(root1, root2);
+
+            Assert.Equal(expectedCommonNodes, actualCommonNodes);
+        }
+
+        [Fact]
+        public void Insert_ShouldInsertNodeCorrectly()
+        {
+
+            Node root = null;
+            root = Program.insert(root, 5);
+
+            Node newNode = Program.insert(root, 3);
+
+            Assert.Equal(5, newNode.key);
+            Assert.NotNull(newNode.left);
+            Assert.Null(newNode.right);
+        }
+
+        [Fact]
+        public void FindCommon_ReturnEmptyList()
+        {
+
+            Node root1 = null;
+            Node root2 = null;
+
+
+
+            List<int> actualCommonNodes = TreeIntersection.FindIntersection(root1, root2);
+
+            Assert.Empty(actualCommonNodes);
+        }
     }
 }
+<<<<<<< HEAD
 public class LeftJoinTests
 {
     [Fact]
@@ -90,6 +196,8 @@ public class LeftJoinTests
             { "sad", "unhappy" },
             { "angry", "furious" }
         };
+=======
+>>>>>>> a49f5c93b8025748824ace7eb57fafb4e67b6614
 
         Dictionary<string, string> antonyms = new Dictionary<string, string>
         {
