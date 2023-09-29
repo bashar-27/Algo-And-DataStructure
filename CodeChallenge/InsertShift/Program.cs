@@ -27,33 +27,50 @@ namespace InsertShift
         static void Main(string[] args)
         {
 
-            Dictionary<string, string> synonymsHashTable = new Dictionary<string, string>
-        {
-            { "diligent", "employed" },
-            { "fond", "enamored" },
-            { "guide", "usher" },
-            { "outfit", "garb" },
-            { "wrath", "anger" }
-        };
+            Graph graph = new Graph(true);
 
-            Dictionary<string, string> antonymsHashTable = new Dictionary<string, string>
-        {
-            { "diligent", "idle" },
-            { "fond", "averse" },
-            { "guide", "follow" },
-            { "flow", "jam" },
-            { "wrath", "delight" }
-        };
+            // Add nodes
+            Graph.GraphNode nodeA = graph.AddNode("A");
+            Graph.GraphNode nodeB = graph.AddNode("B");
+            Graph.GraphNode nodeC = graph.AddNode("C");
+            Graph.GraphNode nodeD = graph.AddNode("D");
+            Graph.GraphNode nodeE = graph.AddNode("E");
 
+            // Add weighted edges
+            graph.AddEdge(nodeA, nodeB, 3);
+            graph.AddEdge(nodeA, nodeC, 2);
+            graph.AddEdge(nodeB, nodeD, 1);
+            graph.AddEdge(nodeC, nodeE, 4);
+            graph.AddEdge(nodeD, nodeE, 2);
 
-            List<List<string>> result = LeftJoin(synonymsHashTable, antonymsHashTable);
-
-
-            Console.WriteLine("The Result:");
-            foreach (var row in result)
+            // Print out nodes
+            Console.WriteLine("Nodes:");
+            foreach (var node in graph.GetNodes())
             {
-                Console.WriteLine($"[{string.Join(", ", row)}]");
+                Console.WriteLine(node.Value);
             }
+
+            // Print out neighbors of node "A"
+            Console.WriteLine("\nNeighbors of C:");
+            foreach (var edge in graph.GetNeighbors(nodeC))
+            {
+                Console.WriteLine($"{edge.GetEnd().Value} (Weight: {edge.GetWeight()})");
+            }
+
+            // Get a node by value
+            Graph.GraphNode nodeCFound = graph.GetNodeByValue("K");
+            if (nodeCFound != null)
+            {
+                Console.WriteLine($"\nNode with value 'K' found.");
+            }
+            else
+            {
+                Console.WriteLine("\nNode with value 'K' not found.");
+            }
+
+            // Get the size of the graph
+            int size = graph.Size();
+            Console.WriteLine($"\nSize of the graph: {size}");
         }
     }
 
