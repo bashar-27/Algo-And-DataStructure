@@ -48,16 +48,16 @@ namespace InsertShift
             foreach (var node in graph.GetNodes())
             {
                 Console.WriteLine(node.Value);
-            }
+            }   
 
-            // Print out neighbors of node "A"
+         
             Console.WriteLine("\nNeighbors of C:");
             foreach (var edge in graph.GetNeighbors(nodeC))
             {
                 Console.WriteLine($"{edge.GetEnd().Value} (Weight: {edge.GetWeight()})");
             }
 
-            // Get a node by value
+          
             Graph.GraphNode nodeCFound = graph.GetNodeByValue("K");
             if (nodeCFound != null)
             {
@@ -68,7 +68,7 @@ namespace InsertShift
                 Console.WriteLine("\nNode with value 'K' not found.");
             }
 
-            // Get the size of the graph
+         
             int size = graph.Size();
             Console.WriteLine($"\nSize of the graph: {size}");
         }

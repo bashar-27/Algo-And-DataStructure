@@ -558,7 +558,92 @@ namespace TreeTest
 
             Assert.InRange(hash, 0, Hashtable.Size - 1);
         }
-     }
-   }
+
+
+        [Fact]
+        public void AddNode()
+        {
+            // Arrange
+            Graph graph = new Graph(true);
+
+            // Act
+            Graph.GraphNode node = graph.AddNode("A");
+
+        
+            Assert.NotNull(node);
+            Assert.Equal("A", node.Value);
+        }
+
+
+        [Fact]
+        public void GetNodes()
+        {
+            // Arrange
+            Graph graph = new Graph(true);
+            graph.AddNode("A");
+            graph.AddNode("B");
+
+            // Act
+            var nodes = graph.GetNodes();
+
+            // Assert
+            Assert.NotNull(nodes);
+            Assert.Equal(2, nodes.Count);
+        }
+
+        [Fact]
+        public void GetNodeByValue()
+        {
+            // Arrange
+            Graph graph = new Graph(true);
+            Graph.GraphNode nodeA = graph.AddNode("A");
+            Graph.GraphNode nodeB = graph.AddNode("B");
+
+            // Act
+            var foundNode = graph.GetNodeByValue("B");
+
+            // Assert
+            Assert.NotNull(foundNode);
+            Assert.Equal(nodeB, foundNode);
+        }
+
+        [Fact]
+        public void GetNeighbors()
+        {
+            // Arrange
+            Graph graph = new Graph(true);
+            Graph.GraphNode nodeA = graph.AddNode("A");
+            Graph.GraphNode nodeB = graph.AddNode("B");
+            graph.AddEdge(nodeA, nodeB, 3);
+
+            // Act
+            var neighbors = graph.GetNeighbors(nodeA);
+
+            // Assert
+            Assert.Single(neighbors);
+            Assert.Equal(nodeB, neighbors[0].GetEnd());
+            Assert.Equal(3, neighbors[0].GetWeight());
+        }
+
+        
+
+        [Fact]
+        public void ExpectedFailure()
+        {
+            // Arrange
+            Graph graph = new Graph(true);
+            Graph.GraphNode nodeA = graph.AddNode("A");
+            Graph.GraphNode nodeB = graph.AddNode("B");
+
+            // Act & Assert
+            var foundNode = graph.GetNodeByValue("C"); // Attempt to find non-existent node
+
+            Assert.Null(foundNode);
+        }
+        
+        }
+
+    }
+
     
 
