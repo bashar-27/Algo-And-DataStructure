@@ -760,7 +760,66 @@ namespace TreeTest
                 Assert.Empty(visitedNodes);
             }
         }
+        [Fact]
+        public void DepthFirst1()
+        {
+            // Arrange
+            Graph graph = new Graph(true);
+            Graph.GraphNode nodeA = graph.AddNode("A");
 
+            // Act
+            List<Graph.GraphNode> visitedNodes = graph.DepthFirst(nodeA);
+
+            // Assert
+            Assert.Single(visitedNodes);
+            Assert.Equal("A", visitedNodes[0].Value);
+        }
+
+        [Fact]
+        public void DepthFirst2()
+        {
+            // Arrange
+            Graph graph = new Graph(true);
+            Graph.GraphNode nodeA = graph.AddNode("A");
+            Graph.GraphNode nodeB = graph.AddNode("B");
+            Graph.GraphNode nodeC = graph.AddNode("C");
+
+            // Act
+            List<Graph.GraphNode> visitedNodes = graph.DepthFirst(nodeA);
+
+            // Assert
+            Assert.NotEqual(3, visitedNodes.Count);
+         
+        }
+
+        [Fact]
+        public void DepthFirst3()
+        {
+            // Arrange
+            Graph graph = new Graph(true);
+            Graph.GraphNode nodeA = graph.AddNode("A");
+            Graph.GraphNode nodeB = graph.AddNode("B");
+            Graph.GraphNode nodeC = graph.AddNode("C");
+            Graph.GraphNode nodeD = graph.AddNode("D");
+            Graph.GraphNode nodeE = graph.AddNode("E");
+
+            graph.AddEdge(nodeA, nodeB, 3);
+            graph.AddEdge(nodeA, nodeC, 2);
+            graph.AddEdge(nodeB, nodeD, 1);
+            graph.AddEdge(nodeC, nodeE, 4);
+            graph.AddEdge(nodeD, nodeE, 2);
+
+            // Act
+            List<Graph.GraphNode> visitedNodes = graph.DepthFirst(nodeA);
+
+            // Assert
+            Assert.Equal(5, visitedNodes.Count);
+            Assert.Equal("A", visitedNodes[0].Value);
+            Assert.Equal("B", visitedNodes[1].Value);
+            Assert.Equal("D", visitedNodes[2].Value);
+            Assert.Equal("E", visitedNodes[3].Value);
+            Assert.Equal("C", visitedNodes[4].Value);
+        }
 
     }
 

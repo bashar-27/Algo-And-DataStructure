@@ -30,37 +30,39 @@ namespace InsertShift
             Graph graph = new Graph(true);
 
             // Add nodes
-            Graph.GraphNode nodeA = graph.AddNode("Pandora");
-            Graph.GraphNode nodeB = graph.AddNode("Arendelle");
-            Graph.GraphNode nodeC = graph.AddNode("Metroville");
-            Graph.GraphNode nodeD = graph.AddNode("Monstroplolis");
-            Graph.GraphNode nodeE = graph.AddNode("Narnia");
-            Graph.GraphNode nodeF = graph.AddNode("Naboo");
+            Graph.GraphNode nodeA = graph.AddNode("A");
+            Graph.GraphNode nodeB = graph.AddNode("B");
+            Graph.GraphNode nodeC = graph.AddNode("C");
+            Graph.GraphNode nodeD = graph.AddNode("D");
+            Graph.GraphNode nodeE = graph.AddNode("E");
 
             // Add weighted edges
             graph.AddEdge(nodeA, nodeB, 3);
             graph.AddEdge(nodeA, nodeC, 2);
-            graph.AddEdge(nodeC, nodeD, 1);
+            graph.AddEdge(nodeB, nodeD, 1);
             graph.AddEdge(nodeC, nodeE, 4);
-            graph.AddEdge(nodeD, nodeF, 2);
-            graph.AddEdge(nodeE, nodeF, 8);
+            graph.AddEdge(nodeD, nodeE, 2);
 
-            // Call the BreadthFirst method
-            List<Graph.GraphNode> visitedNodes = graph.BreadthFirst(nodeC);
 
-            // Display the visited nodes
-            Console.Write("Output: ");
+            List<Graph.GraphNode> visitedNodes = graph.DepthFirst(nodeA);
+
+            // Display the collection
+            Console.WriteLine("Depth-First Traversal:");
             foreach (Graph.GraphNode node in visitedNodes)
             {
-                Console.Write(node.Value);
-                if (node != visitedNodes.Last())
-                {
-                    Console.Write(", ");
-                }
+                Console.WriteLine(node.Value);
             }
-            Console.WriteLine();
-        
-                    // Print out nodes
+
+            List<Graph.GraphNode> visitedNodesInBreadth = graph.BreadthFirst(nodeA);
+
+            // Display the visited nodes
+            //Console.WriteLine("Breadth-Visited Nodes:");
+            //foreach (Graph.GraphNode node in visitedNodesInBreadth)
+            //{
+            //    Console.WriteLine(node.Value);
+            //}
+
+            // Print out nodes
             //Console.WriteLine("Nodes:");
             //foreach (var node in graph.GetNodes())
             //{

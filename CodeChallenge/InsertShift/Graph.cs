@@ -68,7 +68,7 @@ namespace InsertShift
         {
             if (startNode == null)
             {
-                return new List<GraphNode>(); // Return an empty list if startNode is null
+                return new List<GraphNode>(); 
             }
             List<GraphNode> visitedNodes = new List<GraphNode>();
             Queue<GraphNode> queue = new Queue<GraphNode>();
@@ -137,6 +137,42 @@ namespace InsertShift
 
             return totalCost;
         }
+        public List<GraphNode> DepthFirst(GraphNode startNode)
+        {
+            if (startNode == null)
+            {
+                return new List<GraphNode>();
+            }
+
+            List<GraphNode> visitedNodes = new List<GraphNode>();
+            HashSet<GraphNode> visitedSet = new HashSet<GraphNode>();
+
+            Stack<GraphNode> stack = new Stack<GraphNode>();
+            stack.Push(startNode);
+
+            while (stack.Count > 0)
+            {
+                GraphNode currentNode = stack.Pop();
+
+                if (!visitedSet.Contains(currentNode))
+                {
+                    visitedNodes.Add(currentNode);
+                    visitedSet.Add(currentNode);
+
+                    foreach (Edge edge in currentNode.Edges)
+                    {
+                        GraphNode neighborNode = edge.GetEnd();
+                        if (!visitedSet.Contains(neighborNode))
+                        {
+                            stack.Push(neighborNode);
+                        }
+                    }
+                }
+            }
+
+            return visitedNodes;
+        }
+
 
         public class GraphNode
         {
