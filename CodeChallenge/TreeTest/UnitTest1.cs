@@ -640,10 +640,77 @@ namespace TreeTest
 
             Assert.Null(foundNode);
         }
-        
+
+
+        public class BusinessTripTests
+        {
+            // ... (previous test methods)
+
+            [Fact]
+            public void BusinessTrip()
+            {
+                // Arrange
+                Graph graph = new Graph(true);
+
+                Graph.GraphNode metroville = graph.AddNode("Metroville");
+                Graph.GraphNode pandora = graph.AddNode("Pandora");
+                Graph.GraphNode arendelle = graph.AddNode("Arendelle");
+                Graph.GraphNode newMonstropolis = graph.AddNode("New Monstropolis");
+                Graph.GraphNode naboo = graph.AddNode("Naboo");
+
+                graph.AddEdge(metroville, pandora, 82);
+                graph.AddEdge(metroville, newMonstropolis, 105);
+                graph.AddEdge(pandora, arendelle, 99);
+                graph.AddEdge(newMonstropolis, arendelle, 42);
+                graph.AddEdge(newMonstropolis, naboo, 73);
+                graph.AddEdge(arendelle, naboo, 37);
+
+                string[] cities = { "Metroville", "Pandora", "Arendelle" };
+
+              
+                int? result = Graph.BusinessTrip(graph, cities);
+
+
+                Assert.NotNull(result);
+                Assert.Equal(181, result);
+            }
+
+            [Fact]
+            public void BusinessTrip_InvalidPatl()
+            {
+                
+                Graph graph = new Graph(true);
+          
+
+                string[] cities = { "Metroville", "Pandora", "Naboo" }; 
+
+            
+                int? result = Graph.BusinessTrip(graph, cities);
+
+                Assert.Null(result);
+            }
+
+            [Fact]
+            public void BusinessTrip_LessThanTwoCitie()
+            {
+             
+                Graph graph = new Graph(true);
+              
+
+                string[] cities = { "Metroville" }; 
+
+          
+                int? result = Graph.BusinessTrip(graph, cities);
+
+             
+                Assert.Null(result);
+            }
         }
 
+
     }
+
+}
 
     
 

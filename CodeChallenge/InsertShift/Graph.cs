@@ -63,6 +63,49 @@ namespace InsertShift
         {
             return MyGraph.Count();
         }
+
+        public static int? BusinessTrip(Graph graph, string[] cities)
+        {
+            if (cities.Length < 2)
+            {
+                return null; 
+            }
+
+            int totalCost = 0;
+
+            for (int i = 0; i < cities.Length - 1; i++)
+            {
+                Graph.GraphNode startNode = graph.GetNodeByValue(cities[i]);
+                Graph.GraphNode endNode = graph.GetNodeByValue(cities[i + 1]);
+
+                if (startNode != null && endNode != null)
+                {
+                    bool pathFound = false;
+
+                    foreach (Graph.Edge edge in startNode.Edges)
+                    {
+                        if (edge.GetEnd() == endNode)
+                        {
+                            totalCost += edge.GetWeight();
+                            pathFound = true;
+                            break;
+                        }
+                    }
+
+                    if (!pathFound)
+                    {
+                        return null; 
+                    }
+                }
+                else
+                {
+                    return null; 
+                }
+            }
+
+            return totalCost;
+        }
+
         public class GraphNode
         {
             public string Value { get; set; }
