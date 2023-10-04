@@ -64,6 +64,38 @@ namespace InsertShift
             return MyGraph.Count();
         }
 
+        public List<GraphNode> BreadthFirst(GraphNode startNode)
+        {
+            if (startNode == null)
+            {
+                return new List<GraphNode>(); // Return an empty list if startNode is null
+            }
+            List<GraphNode> visitedNodes = new List<GraphNode>();
+            Queue<GraphNode> queue = new Queue<GraphNode>();
+
+            HashSet<GraphNode> visitedSet = new HashSet<GraphNode>();
+            visitedSet.Add(startNode);
+            queue.Enqueue(startNode);
+
+            while (queue.Count > 0)
+            {
+                GraphNode currentNode = queue.Dequeue();
+                visitedNodes.Add(currentNode);
+
+                foreach (Edge edge in currentNode.Edges)
+                {
+                    GraphNode neighborNode = edge.GetEnd();
+                    if (!visitedSet.Contains(neighborNode))
+                    {
+                        visitedSet.Add(neighborNode);
+                        queue.Enqueue(neighborNode);
+                    }
+                }
+            }
+
+            return visitedNodes;
+        }
+
         public static int? BusinessTrip(Graph graph, string[] cities)
         {
             if (cities.Length < 2)

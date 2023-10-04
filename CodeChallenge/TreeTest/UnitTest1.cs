@@ -705,6 +705,60 @@ namespace TreeTest
              
                 Assert.Null(result);
             }
+
+
+            [Fact]
+            public void BreadthFirst1()
+            {
+                // Arrange
+                Graph graph = new Graph(true);
+                Graph.GraphNode nodeA = graph.AddNode("A");
+                Graph.GraphNode nodeB = graph.AddNode("B");
+                Graph.GraphNode nodeC = graph.AddNode("C");
+                Graph.GraphNode nodeD = graph.AddNode("D");
+                Graph.GraphNode nodeE = graph.AddNode("E");
+
+                graph.AddEdge(nodeA, nodeB, 3);
+                graph.AddEdge(nodeA, nodeC, 2);
+                graph.AddEdge(nodeB, nodeD, 1);
+                graph.AddEdge(nodeC, nodeE, 4);
+                graph.AddEdge(nodeD, nodeE, 2);
+
+                // Act
+                List<Graph.GraphNode> visitedNodes = graph.BreadthFirst(nodeA);
+
+                // Assert
+                string result = string.Join(", ", visitedNodes.Select(node => node.Value));
+                Assert.Equal("A, B, C, D, E", result);
+            }
+
+            [Fact]
+            public void BreadthFirst2()
+            {
+                // Arrange
+                Graph graph = new Graph(true);
+                Graph.GraphNode nodeA = graph.AddNode("A");
+
+                // Act
+                List<Graph.GraphNode> visitedNodes = graph.BreadthFirst(nodeA);
+
+                // Assert
+                Assert.Single(visitedNodes);
+                Assert.Equal("A", visitedNodes[0].Value);
+            }
+
+            [Fact]
+            public void BreadthFirst3()
+            {
+                // Arrange
+                Graph graph = new Graph(true);
+
+                // Act
+                List<Graph.GraphNode> visitedNodes = graph.BreadthFirst(null);
+
+                // Assert
+                Assert.Empty(visitedNodes);
+            }
         }
 
 
