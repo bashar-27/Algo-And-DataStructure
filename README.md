@@ -29,3 +29,4 @@
 | Challenge 33:           |[Left Join](CodeChallenge/LJoin.md)                                                                                   | 
 | Challenge 34:           |[Graph](CodeChallenge/Graph.md)                                                                                       |
 | Challenge 35:           |[Graph-Business](CodeChallenge/GraphBusiness.md)                                                                      |
+| Challenge 36:           |[Graph BF](CodeChallenge/BFSGraph.md)                                                                                 |
