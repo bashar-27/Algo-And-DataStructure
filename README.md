@@ -27,3 +27,5 @@
 | Challenge 31:           |[HashMap](https://github.com/bashar-27/Algo-And-DataStructure/blob/master/CodeChallenge/HashMap.md)                   |   
 | Challenge 32:           |[HashTable](CodeChallenge/InterSection.md)                                                                            |
 | Challenge 33:           |[Left Join](CodeChallenge/LJoin.md)                                                                                   | 
+| Challenge 34:           |[Graph](CodeChallenge/Graph.md)                                                                                       |
+| Challenge 35:           |[Graph-Business](CodeChallenge/GraphBusiness.md)                                                                      |
