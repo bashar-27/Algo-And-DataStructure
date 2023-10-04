@@ -44,33 +44,63 @@ namespace InsertShift
             graph.AddEdge(nodeD, nodeE, 2);
 
             // Print out nodes
-            Console.WriteLine("Nodes:");
-            foreach (var node in graph.GetNodes())
-            {
-                Console.WriteLine(node.Value);
-            }   
+            //Console.WriteLine("Nodes:");
+            //foreach (var node in graph.GetNodes())
+            //{
+            //    Console.WriteLine(node.Value);
+            //}   
 
          
-            Console.WriteLine("\nNeighbors of C:");
-            foreach (var edge in graph.GetNeighbors(nodeC))
-            {
-                Console.WriteLine($"{edge.GetEnd().Value} (Weight: {edge.GetWeight()})");
-            }
+            //Console.WriteLine("\nNeighbors of C:");
+            //foreach (var edge in graph.GetNeighbors(nodeC))
+            //{
+            //    Console.WriteLine($"{edge.GetEnd().Value} (Weight: {edge.GetWeight()})");
+            //}
 
           
-            Graph.GraphNode nodeCFound = graph.GetNodeByValue("K");
-            if (nodeCFound != null)
-            {
-                Console.WriteLine($"\nNode with value 'K' found.");
-            }
-            else
-            {
-                Console.WriteLine("\nNode with value 'K' not found.");
-            }
+            //Graph.GraphNode nodeCFound = graph.GetNodeByValue("K");
+            //if (nodeCFound != null)
+            //{
+            //    Console.WriteLine($"\nNode with value 'K' found.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("\nNode with value 'K' not found.");
+            //}
 
          
-            int size = graph.Size();
-            Console.WriteLine($"\nSize of the graph: {size}");
+            //int size = graph.Size();
+            //Console.WriteLine($"\nSize of the graph: {size}");
+
+
+            Graph.GraphNode metroville = graph.AddNode("Metroville");
+            Graph.GraphNode pandora = graph.AddNode("Pandora");
+            Graph.GraphNode arendelle = graph.AddNode("Arendelle");
+            Graph.GraphNode newMonstropolis = graph.AddNode("New Monstropolis");
+            Graph.GraphNode naboo = graph.AddNode("Naboo");
+
+            graph.AddEdge(metroville, pandora, 82);
+            graph.AddEdge(metroville, newMonstropolis, 105);
+            graph.AddEdge(pandora, arendelle, 99);
+            graph.AddEdge(newMonstropolis, arendelle, 42);
+            graph.AddEdge(newMonstropolis, naboo, 73);
+            graph.AddEdge(arendelle, naboo, 37);
+
+            string[][] testCases = new string[][] {
+            new string[] {"Metroville", "Pandora" },
+            new string[] {"Arendelle", "New Monstropolis", "Naboo" },
+            new string[] {"Naboo", "Pandora" },
+            new string[] {"Narnia", "Arendelle", "Naboo" },
+            new string[] {"Metroville", "New Monstropolis", "Naboo" },
+            new string[] {"Arendelle", "Pandora" },
+            new string[] {"Naboo", "Arendelle", "New Monstropolis" }
+        };
+
+            foreach (string[] testCase in testCases)
+            {
+                int? cost = Graph.BusinessTrip(graph, testCase);
+                Console.WriteLine($"Trip from {string.Join(" -> ", testCase)}: {(cost.HasValue ? "$" + cost : "null")}");
+            }
         }
     }
 
